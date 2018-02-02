@@ -53,6 +53,7 @@ while(True):
         draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (40, 90), 90, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, 'Svetlo: '+str(light.light()), (60, 90), 90, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, 'Akcelerace: '+str(motion.accelerometer()), (80, 90), 90, font, fill=(255,255,255))
+        update = False
     if (timer > 10):
        print("timer -= 1")
        timer -= 1
