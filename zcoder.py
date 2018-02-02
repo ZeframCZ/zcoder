@@ -4,6 +4,8 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 from envirophat import weather
+from envirophat import light
+from envirophat import motion
 
 import Adafruit_ILI9341 as TFT
 import Adafruit_GPIO as GPIO
@@ -48,8 +50,10 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     image.paste(rotated, position, rotated)
 
 # Write two lines of white text on the buffer, rotated 90 degrees counter clockwise.
-draw_rotated_text(disp.buffer, 'Hello World!', (150, 120), 90, font, fill=(255,255,255))
-draw_rotated_text(disp.buffer, 'This is a line of text.', (170, 90), 90, font, fill=(255,255,255))
+draw_rotated_text(disp.buffer, 'Teplota: '+str(weather.temperature()), (20, 120), 90, font, fill=(255,255,255))
+draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (40, 90), 90, font, fill=(255,255,255))
+draw_rotated_text(disp.buffer, 'Světlo: '+str(light.light()), (60, 90), 90, font, fill=(255,255,255))
+draw_rotated_text(disp.buffer, 'Akcelerace: '+str(motion.accelerometer()), (80, 90), 90, font, fill=(255,255,255))
 
 
 
