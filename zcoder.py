@@ -60,6 +60,7 @@ while(True):
     if (timer > 1):
         timer -= 1
     if (timer < 2):
+        disp.clear((0, 0, 0))
         print("update = True")
         update = True
         timer = 60
