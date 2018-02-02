@@ -48,7 +48,8 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     # Paste the text into the image, using it as a mask for transparency.
     image.paste(rotated, position, rotated)
 
-while(update):
+while(True):
+if update = True:
     update = False
     print("screen updated")
     #disp.clear((0, 0, 0))
@@ -57,7 +58,7 @@ while(update):
     draw_rotated_text(disp.buffer, 'Svetlo: '+str(light.light()), (60, 90), 90, font, fill=(255,255,255))
     draw_rotated_text(disp.buffer, 'Akcelerace: '+str(motion.accelerometer()), (80, 90), 90, font, fill=(255,255,255))
 
-while(timer > 1):
+if timer > 10:
     print("timer -= 1")
     timer -= 1
 if timer < 2:
