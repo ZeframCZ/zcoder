@@ -55,4 +55,4 @@ draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (40, 90), 90, f
 draw_rotated_text(disp.buffer, 'Svetlo: '+str(light.light()), (60, 90), 90, font, fill=(255,255,255))
 draw_rotated_text(disp.buffer, 'Akcelerace: '+str(motion.accelerometer()), (80, 90), 90, font, fill=(255,255,255))
 while(True):
-disp.display()
+    disp.display()
