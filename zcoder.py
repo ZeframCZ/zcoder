@@ -7,7 +7,7 @@ from envirophat import weather
 from envirophat import light
 from envirophat import motion
 
-import math 
+import math
 
 import Adafruit_ILI9341 as TFT
 import Adafruit_GPIO as GPIO
@@ -54,7 +54,7 @@ while(True):
         draw_rotated_text(disp.buffer, 'Teplota: '+str(weather.temperature()), (10, 10), 90, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (30, 10), 90, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, 'Svetlo: '+str(light.light()), (50, 10), 90, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Akcelerace: '+str(math.floor(motion.accelerometer())), (70, 10), 90, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Akcelerace: '+str(math.ceil(motion.accelerometer())), (70, 10), 90, font, fill=(255,255,255))
         disp.display()
         update = False
     if (timer > 1):
