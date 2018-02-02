@@ -61,4 +61,4 @@ while(True):
     if (timer < 2):
         print("update = True")
         update = True
-        timer = 10
+        #timer = 10
