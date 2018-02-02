@@ -48,9 +48,7 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     # Paste the text into the image, using it as a mask for transparency.
     image.paste(rotated, position, rotated)
 while(True):
-    print("timer: " + str(timer))
     if (update):
-        print("updated")
         draw_rotated_text(disp.buffer, 'Teplota: '+str(weather.temperature()), (20, 120), 90, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (40, 90), 90, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, 'Svetlo: '+str(light.light()), (60, 90), 90, font, fill=(255,255,255))
@@ -61,6 +59,5 @@ while(True):
         timer -= 1
     if (timer < 2):
         disp.clear((0, 0, 0))
-        print("update = True")
         update = True
-        timer = 60
+        timer = 20
