@@ -28,9 +28,8 @@ disp.clear((0, 0, 0))
 draw = disp.draw()
 font = ImageFont.load_default()
 
-#--------------------GET STUFF FROM SENSORS--------------------
 
-
+run = True
 
 
 #--------------------START DRAWING STUFF--------------------
@@ -49,13 +48,13 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     # Paste the text into the image, using it as a mask for transparency.
     image.paste(rotated, position, rotated)
 
-# Write two lines of white text on the buffer, rotated 90 degrees counter clockwise.
+while(run = True):
+    
+disp.clear((0, 0, 0))
+
 draw_rotated_text(disp.buffer, 'Teplota: '+str(weather.temperature()), (20, 120), 90, font, fill=(255,255,255))
 draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (40, 90), 90, font, fill=(255,255,255))
 draw_rotated_text(disp.buffer, 'Svetlo: '+str(light.light()), (60, 90), 90, font, fill=(255,255,255))
 draw_rotated_text(disp.buffer, 'Akcelerace: '+str(motion.accelerometer()), (80, 90), 90, font, fill=(255,255,255))
-
-
-
 
 disp.display()
