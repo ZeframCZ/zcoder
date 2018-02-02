@@ -29,7 +29,7 @@ font = ImageFont.load_default()
 #--------------------GET STUFF FROM SENSORS--------------------
 
 
-while(True):
+
 
 #--------------------START DRAWING STUFF--------------------
 
@@ -48,11 +48,8 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     image.paste(rotated, position, rotated)
 
 # Write two lines of white text on the buffer, rotated 90 degrees counter clockwise.
-draw_rotated_text(disp.buffer, text ="Temprature: "+str(weather.temperature()), (10, 10), 90, font, fill=(255,255,255))
-draw_rotated_text(disp.buffer, text = "Atmo. pressure: "+str(weather.pressure()), (10, 100), 90, font, fill=(255,255,255))
+draw_rotated_text(disp.buffer, text ="Temprature: ", (10, 10), 90, font, fill=(255,255,255))
+
 
 
 disp.display()
-
-
-
