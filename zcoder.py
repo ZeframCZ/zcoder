@@ -50,6 +50,7 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
 
 while(update):
     update = False
+    print("screen updated")
     #disp.clear((0, 0, 0))
     draw_rotated_text(disp.buffer, 'Teplota: '+str(weather.temperature()), (20, 120), 90, font, fill=(255,255,255))
     draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (40, 90), 90, font, fill=(255,255,255))
@@ -57,7 +58,9 @@ while(update):
     draw_rotated_text(disp.buffer, 'Akcelerace: '+str(motion.accelerometer()), (80, 90), 90, font, fill=(255,255,255))
 
 while(timer > 1):
+    print("timer -= 1")
     timer -= 1
 if timer < 2:
+    print("update = True")
     update = True
     timer = 10
