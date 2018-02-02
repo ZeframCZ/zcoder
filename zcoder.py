@@ -49,19 +49,18 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     image.paste(rotated, position, rotated)
 
 while(True):
-if update = True:
-    update = False
-    print("screen updated")
-    #disp.clear((0, 0, 0))
-    draw_rotated_text(disp.buffer, 'Teplota: '+str(weather.temperature()), (20, 120), 90, font, fill=(255,255,255))
-    draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (40, 90), 90, font, fill=(255,255,255))
-    draw_rotated_text(disp.buffer, 'Svetlo: '+str(light.light()), (60, 90), 90, font, fill=(255,255,255))
-    draw_rotated_text(disp.buffer, 'Akcelerace: '+str(motion.accelerometer()), (80, 90), 90, font, fill=(255,255,255))
-
-if timer > 10:
-    print("timer -= 1")
-    timer -= 1
-if timer < 2:
-    print("update = True")
-    update = True
-    timer = 10
+    if update = True:
+        update = False
+        print("screen updated")
+        #disp.clear((0, 0, 0))
+        draw_rotated_text(disp.buffer, 'Teplota: '+str(weather.temperature()), (20, 120), 90, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (40, 90), 90, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Svetlo: '+str(light.light()), (60, 90), 90, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Akcelerace: '+str(motion.accelerometer()), (80, 90), 90, font, fill=(255,255,255))
+    if timer > 10:
+        print("timer -= 1")
+        timer -= 1
+    if timer < 2:
+        print("update = True")
+        update = True
+        timer = 10
