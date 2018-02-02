@@ -58,8 +58,8 @@ while(True):
         update = False
         timer = 10
     if (timer >= 10):
-       print("timer: "+str(timer))
-       timer -= 1
+        timer -= 1
+        print("timer: "+str(timer))
     if (timer < 2):
-       print("update = True")
-       update = True
+        print("update = True")
+        update = True
