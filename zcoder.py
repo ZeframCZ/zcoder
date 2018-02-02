@@ -54,7 +54,7 @@ while(True):
         draw_rotated_text(disp.buffer, 'Teplota: '+str(weather.temperature()), (10, 10), 90, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (30, 10), 90, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, 'Svetlo: '+str(light.light()), (50, 10), 90, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Akcelerace: '+int(math.floor(motion.accelerometer())), (70, 10), 90, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Akcelerace: {0}'.format(str(math.floor(motion.accelerometer()))), (70, 10), 90, font, fill=(255, 255, 255))
         disp.display()
         update = False
     if (timer > 1):
