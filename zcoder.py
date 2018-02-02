@@ -50,7 +50,7 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
 
 while(True):
 
-disp.clear((0, 0, 0))
+#disp.clear((0, 0, 0))
 
 draw_rotated_text(disp.buffer, 'Teplota: '+str(weather.temperature()), (20, 120), 90, font, fill=(255,255,255))
 draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (40, 90), 90, font, fill=(255,255,255))
