@@ -57,7 +57,7 @@ while(True):
         draw_rotated_text(disp.buffer, 'Akcelerace: '+str(motion.accelerometer()), (80, 90), 90, font, fill=(255,255,255))
         update = False
         timer = 10
-    if (timer > 10):
+    if (timer >= 10):
        print("timer: "+str(timer))
        timer -= 1
     if (timer < 2):
