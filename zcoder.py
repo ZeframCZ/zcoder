@@ -37,7 +37,7 @@ update = True
 timer = 10
 text_rotation = 180
 screen_width = 240
-cpu_temp = float(subprocess.check_output(["/opt/vc/bin/vcgencmd","measure_temp"])
+#cpu_temp = float(subprocess.check_output(["/opt/vc/bin/vcgencmd","measure_temp"])
 #--------------------DEFINE DRAW FUNCTION--------------------
 def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     # Get rendered font width and height.
@@ -62,15 +62,15 @@ while(True):#repeat
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
         #get width of texts
 
-        #w1,h1 = draw.textsize("ZCoder 2.0")
-        #w2, h2 = draw.textsize("Teplota: "+str(math.floor(sens_temperature)))
-        #w3, h3 = draw.textsize("Tlak: "+str(math.floor(sens_pressure)))
-        #w4, h4 = draw.textsize("Svetlo: "+str(sens_light))
-        #w5, h5 = draw.textsize("Akcelerace")
-        #w6, h6 = draw.textsize("X: " + str(math.floor(sens_accX)))
-        #w7, h7 = draw.textsize("Y: " + str(math.floor(sens_accY)))
-        #w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
-        
+        w1,h1 = draw.textsize("ZCoder 2.0")
+        w2, h2 = draw.textsize("Teplota: "+str(math.floor(sens_temperature)))
+        w3, h3 = draw.textsize("Tlak: "+str(math.floor(sens_pressure)))
+        w4, h4 = draw.textsize("Svetlo: "+str(sens_light))
+        w5, h5 = draw.textsize("Akcelerace")
+        w6, h6 = draw.textsize("X: " + str(math.floor(sens_accX)))
+        w7, h7 = draw.textsize("Y: " + str(math.floor(sens_accY)))
+        w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
+
         draw_rotated_text(disp.buffer, "ZCoder 2.0", (screen_width-w1, 310), text_rotation, font,fill=(255, 255, 255))  # PIL.ImageDraw.Draw.textsize
         draw_rotated_text(disp.buffer, "Teplota: "+str(math.floor(sens_temperature))), (screen_width-w2, 290), text_rotation, font, fill=(255,255,255))#+" / "+str(cpu_temp)
         draw_rotated_text(disp.buffer, "Tlak: "+str(math.floor(sens_pressure)), (screen_width-w3, 270), text_rotation, font, fill=(255,255,255))
