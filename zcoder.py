@@ -1,7 +1,9 @@
 #--------------------IMPORT STUFF--------------------
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
+from PIL import *
+
+#from PIL import Image
+#from PIL import ImageDraw
+#from PIL import ImageFont
 
 from envirophat import weather
 from envirophat import light
@@ -55,7 +57,7 @@ while(True):#repeat
         sens_light = light.light()
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
-        draw_rotated_text(disp.buffer, 'Teplota: '+str(sens_temperature), (240-ImageDraw.Draw.textsize('Teplota: '+str(sens_temperature),font = font), 310), text_rotation, font, fill=(255,255,255))#PIL.ImageDraw.Draw.textsize
+        draw_rotated_text(disp.buffer, 'Teplota: '+str(sens_temperature), (240-PIL.ImageDraw.Draw.textsize('Teplota: '+str(sens_temperature),font = font), 310), text_rotation, font, fill=(255,255,255))#PIL.ImageDraw.Draw.textsize
         draw_rotated_text(disp.buffer, 'Tlak: '+str(sens_pressure), (10, 290), text_rotation, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, 'Svetlo: '+str(sens_light), (10, 270), text_rotation, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, 'Akcelerace', (10, 250), text_rotation, font, fill=(255, 255, 255))
