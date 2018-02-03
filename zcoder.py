@@ -1,9 +1,9 @@
 #--------------------IMPORT STUFF--------------------
-import PIL 
+import PIL
 
-#from PIL import Image
-#from PIL import ImageDraw
-#from PIL import ImageFont
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
 
 from envirophat import weather
 from envirophat import light
