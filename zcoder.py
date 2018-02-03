@@ -29,19 +29,10 @@ disp.begin()
 disp.clear((0, 0, 0))
 draw = disp.draw()
 font = ImageFont.load_default()
-
-
+#--------------------SET UP PLACEHOLDERS--------------------
 update = True
 timer = 10
-
-#--------------------GET STUFF FROM SENSORS--------------------
-sens_temperature = weather.temperature()
-sens_pressure = weather.pressure()
-sens_light = light.light()
-sens_accX , sens_accY , sens_accZ = motion.accelerometer()
-
-#--------------------START DRAWING STUFF--------------------
-
+#--------------------DEFINE DRAW FUNCTION--------------------
 def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     # Get rendered font width and height.
     draw = ImageDraw.Draw(image)
@@ -55,20 +46,27 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     rotated = textimage.rotate(angle, expand=1)
     # Paste the text into the image, using it as a mask for transparency.
     image.paste(rotated, position, rotated)
-while(True):
+while(True):#repeat
     if (update):
-        draw_rotated_text(disp.buffer, 'Teplota: '+str(sens_temperature), (10, 10), 90, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Tlak: '+str(sens_pressure), (30, 10), 90, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Svetlo: '+str(sens_light), (50, 10), 90, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Akcelerace', (70, 10), 90, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'X: ' + str(sens_accX), (90, 10), 90, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'Y: ' + str(sens_accY), (110, 10), 90, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'Z: ' + str(sens_accZ), (130, 10), 90, font, fill=(255, 255, 255))
+        #--------------------GET STUFF FROM SENSORS--------------------
+        sens_temperature = weather.temperature()
+        sens_pressure = weather.pressure()
+        sens_light = light.light()
+        sens_accX, sens_accY, sens_accZ = motion.accelerometer()
+        #--------------------DRAW STUFF FROM SENSORS--------------------
+        draw_rotated_text(disp.buffer, 'Teplota: '+str(sens_temperature), (10, 10), 0, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Tlak: '+str(sens_pressure), (30, 10), 0, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Svetlo: '+str(sens_light), (50, 10), 0, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Akcelerace', (70, 10), 0, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'X: ' + str(sens_accX), (90, 10), 0, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'Y: ' + str(sens_accY), (110, 10), 0, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'Z: ' + str(sens_accZ), (130, 10), 0, font, fill=(255, 255, 255))
         disp.display()
         update = False
+    ##--------------------DELAY SCREEN UPDATE--------------------
     if (timer > 1):
         timer -= 1
     if (timer < 2):
         disp.clear((0, 0, 0))
         update = True
-        timer = 20
+        timer = 20#delay time
