@@ -35,7 +35,7 @@ font = ImageFont.load_default()
 update = True
 timer = 10
 text_rotation = 180
-screen_width = 270/2
+screen_width = 240
 #--------------------DEFINE DRAW FUNCTION--------------------
 def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     # Get rendered font width and height.
