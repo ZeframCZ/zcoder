@@ -60,7 +60,7 @@ while(True):#repeat
         sens_light = light.light()
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
         #cpu_temp = (subprocess.check_output(["/opt/vc/bin/vcgencmd", "measure_temp"]))
-        cpu_temp = (subprocess.check_output(["/sys/class/thermal/thermal_zone0/temp"]))
+        cpu_temp = (subprocess.check_output(["echo $((`cat /sys/class/thermal/thermal_zone0/temp`/1000))"]))
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
         #get width of texts
 
