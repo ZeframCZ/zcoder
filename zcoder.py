@@ -57,18 +57,24 @@ while(True):#repeat
         sens_light = light.light()
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
-        #get
-        #w,h = draw.textsize("ZCoder 2.0")
+        #get width of texts
+        w1,h1 = draw.textsize("ZCoder 2.0")
+        w2, h2 = draw.textsize("Teplota: "+str(math.floor(sens_temperature)))
+        w3, h3 = draw.textsize("Tlak: "+str(math.floor(sens_pressure)))
+        w4, h4 = draw.textsize("Svetlo: "+str(sens_light), (10, 230))
+        w5, h5 = draw.textsize("Akcelerace")
+        w6, h6 = draw.textsize("X: " + str(math.floor(sens_accX)))
+        w7, h7 = draw.textsize("Y: " + str(math.floor(sens_accY)))
+        w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
 
-
-        draw_rotated_text(disp.buffer, "ZCoder 2.0"+str(draw.textsize.width("ZCoder 2.0")), (100, 310), text_rotation, font,fill=(255, 255, 255))  # PIL.ImageDraw.Draw.textsize
-        draw_rotated_text(disp.buffer, 'Teplota: '+str(math.floor(sens_temperature)), (100, 290), text_rotation, font, fill=(255,255,255))#PIL.ImageDraw.Draw.textsize
-        draw_rotated_text(disp.buffer, 'Tlak: '+str(math.floor(sens_pressure)), (10, 270), text_rotation, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Svetlo: '+str(sens_light), (10, 230), text_rotation, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Akcelerace', (10, 250), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'X: ' + str(math.floor(sens_accX)), (10, 210), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'Y: ' + str(math.floor(sens_accY)), (10, 190), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'Z: ' + str(math.floor(sens_accZ)), (10, 170), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "ZCoder 2.0", (270-w1, 310), text_rotation, font,fill=(255, 255, 255))  # PIL.ImageDraw.Draw.textsize
+        draw_rotated_text(disp.buffer, "Teplota: "+str(math.floor(sens_temperature)), (270-w2, 290), text_rotation, font, fill=(255,255,255))#PIL.ImageDraw.Draw.textsize
+        draw_rotated_text(disp.buffer, "Tlak: "+str(math.floor(sens_pressure)), (270-w3, 270), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, "Svetlo: "+str(sens_light), (270-w4, 230), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, "Akcelerace", (270-w5, 250), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "X: " + str(math.floor(sens_accX)), (270-w6, 210), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "Y: " + str(math.floor(sens_accY)), (270-w7, 190), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "Z: " + str(math.floor(sens_accZ)), (270-w8, 170), text_rotation, font, fill=(255, 255, 255))
         disp.display()
         update = False
     ##--------------------DELAY SCREEN UPDATE--------------------
