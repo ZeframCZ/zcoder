@@ -1,5 +1,5 @@
 #--------------------IMPORT STUFF--------------------
-from PIL import *
+import PIL 
 
 #from PIL import Image
 #from PIL import ImageDraw
