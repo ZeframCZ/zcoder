@@ -35,6 +35,7 @@ font = ImageFont.load_default()
 update = True
 timer = 10
 text_rotation = 180
+screen_width = 270/2
 #--------------------DEFINE DRAW FUNCTION--------------------
 def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     # Get rendered font width and height.
@@ -67,14 +68,14 @@ while(True):#repeat
         w7, h7 = draw.textsize("Y: " + str(math.floor(sens_accY)))
         w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
 
-        draw_rotated_text(disp.buffer, "ZCoder 2.0", (270-w1, 310), text_rotation, font,fill=(255, 255, 255))  # PIL.ImageDraw.Draw.textsize
-        draw_rotated_text(disp.buffer, "Teplota: "+str(math.floor(sens_temperature)), (270-w2, 290), text_rotation, font, fill=(255,255,255))#PIL.ImageDraw.Draw.textsize
-        draw_rotated_text(disp.buffer, "Tlak: "+str(math.floor(sens_pressure)), (270-w3, 270), text_rotation, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, "Svetlo: "+str(sens_light), (270-w4, 230), text_rotation, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, "Akcelerace", (270-w5, 250), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, "X: " + str(math.floor(sens_accX)), (270-w6, 210), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, "Y: " + str(math.floor(sens_accY)), (270-w7, 190), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, "Z: " + str(math.floor(sens_accZ)), (270-w8, 170), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "ZCoder 2.0", (screen_width-w1, 310), text_rotation, font,fill=(255, 255, 255))  # PIL.ImageDraw.Draw.textsize
+        draw_rotated_text(disp.buffer, "Teplota: "+str(math.floor(sens_temperature)), (screen_width-w2, 290), text_rotation, font, fill=(255,255,255))#PIL.ImageDraw.Draw.textsize
+        draw_rotated_text(disp.buffer, "Tlak: "+str(math.floor(sens_pressure)), (screen_width-w3, 270), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, "Svetlo: "+str(sens_light), (screen_width-w4, 230), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, "Akcelerace", (screen_width-w5, 250), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "X: " + str(math.floor(sens_accX)), (screen_width-w6, 210), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "Y: " + str(math.floor(sens_accY)), (screen_width-w7, 190), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "Z: " + str(math.floor(sens_accZ)), (screen_width-w8, 170), text_rotation, font, fill=(255, 255, 255))
         disp.display()
         update = False
     ##--------------------DELAY SCREEN UPDATE--------------------
