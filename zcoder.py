@@ -61,7 +61,7 @@ while(True):#repeat
         draw_rotated_text(disp.buffer, 'Akcelerace', (10, 250), text_rotation, font, fill=(255, 255, 255))
         draw_rotated_text(disp.buffer, 'X: ' + str(sens_accX), (10, 230), text_rotation, font, fill=(255, 255, 255))
         draw_rotated_text(disp.buffer, 'Y: ' + str(sens_accY), (10, 210), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'Z: ' + str(sens_accZ), (10, 190), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'Z: ' + str(math.floor(sens_accZ)), (10, 190), text_rotation, font, fill=(255, 255, 255))
         disp.display()
         update = False
     ##--------------------DELAY SCREEN UPDATE--------------------
