@@ -36,7 +36,7 @@ font = ImageFont.load_default()
 update = True
 timer = 10
 text_rotation = 180
-screen_width = 240
+screen_width = 230
 
 #--------------------DEFINE DRAW FUNCTION--------------------
 def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
@@ -59,7 +59,8 @@ while(True):#repeat
         sens_pressure = weather.pressure()
         sens_light = light.light()
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
-        cpu_temp = (subprocess.check_output(["/opt/vc/bin/vcgencmd", "measure_temp"]))
+        #cpu_temp = (subprocess.check_output(["/opt/vc/bin/vcgencmd", "measure_temp"]))
+        cpu_temp = (subprocess.check_output(["/sys/class/thermal/thermal_zone0/temp"]))
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
         #get width of texts
 
