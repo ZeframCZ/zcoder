@@ -57,13 +57,13 @@ while(True):#repeat
         sens_light = light.light()
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
-        draw_rotated_text(disp.buffer, 'Teplota: '+str(sens_temperature), (240, 310), text_rotation, font, fill=(255,255,255))#PIL.ImageDraw.Draw.textsize
-        draw_rotated_text(disp.buffer, 'Tlak: '+str(sens_pressure), (240, 290), text_rotation, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Svetlo: '+str(sens_light), (240, 270), text_rotation, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Akcelerace', (240, 250), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'X: ' + str(sens_accX), (240, 230), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'Y: ' + str(sens_accY), (240, 210), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'Z: ' + str(math.floor(sens_accZ)), (240, 190), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'Teplota: '+str(sens_temperature), (100, 310), text_rotation, font, fill=(255,255,255))#PIL.ImageDraw.Draw.textsize
+        draw_rotated_text(disp.buffer, 'Tlak: '+str(sens_pressure), (10, 290), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Svetlo: '+str(sens_light), (10, 270), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Akcelerace', (10, 250), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'X: ' + str(sens_accX), (10, 230), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'Y: ' + str(sens_accY), (10, 210), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'Z: ' + str(math.floor(sens_accZ)), (10, 190), text_rotation, font, fill=(255, 255, 255))
         disp.display()
         update = False
     ##--------------------DELAY SCREEN UPDATE--------------------
