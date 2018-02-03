@@ -61,7 +61,7 @@ while(True):#repeat
         #w,h = draw.textsize("ZCoder 2.0")
 
 
-        draw_rotated_text(disp.buffer, "ZCoder 2.0"+str(draw.textsize.h("ZCoder 2.0")), (100, 310), text_rotation, font,fill=(255, 255, 255))  # PIL.ImageDraw.Draw.textsize
+        draw_rotated_text(disp.buffer, "ZCoder 2.0"+str(draw.textsize.width("ZCoder 2.0")), (100, 310), text_rotation, font,fill=(255, 255, 255))  # PIL.ImageDraw.Draw.textsize
         draw_rotated_text(disp.buffer, 'Teplota: '+str(math.floor(sens_temperature)), (100, 290), text_rotation, font, fill=(255,255,255))#PIL.ImageDraw.Draw.textsize
         draw_rotated_text(disp.buffer, 'Tlak: '+str(math.floor(sens_pressure)), (10, 270), text_rotation, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, 'Svetlo: '+str(sens_light), (10, 230), text_rotation, font, fill=(255,255,255))
