@@ -72,7 +72,7 @@ while(True):#repeat
         w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
 
         draw_rotated_text(disp.buffer, "ZCoder 2.0", (screen_width-w1, 310), text_rotation, font,fill=(255, 255, 255))  # PIL.ImageDraw.Draw.textsize
-        draw_rotated_text(disp.buffer, "Teplota: "+str(math.floor(sens_temperature))+" / "+str(cpu_temp), (screen_width-w2, 290), text_rotation, font, fill=(255,255,255))#+" / "+str(cpu_temp)
+        draw_rotated_text(disp.buffer, "Teplota: "+str(math.floor(sens_temperature))+str(cpu_temp), (screen_width-w2, 290), text_rotation, font, fill=(255,255,255))#+" / "+str(cpu_temp)
         draw_rotated_text(disp.buffer, "Tlak: "+str(math.floor(sens_pressure)), (screen_width-w3, 270), text_rotation, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, "Svetlo: "+str(sens_light), (screen_width-w4, 230), text_rotation, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, "Akcelerace", (screen_width-w5,250), text_rotation, font, fill=(255, 255, 255))
