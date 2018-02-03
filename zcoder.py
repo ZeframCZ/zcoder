@@ -63,7 +63,7 @@ while(True):#repeat
         #/opt/vc/bin/vcgencmd measure_temp
         #cpu_temp = os.system("echo '{}' | ((`cat /sys/class/thermal/thermal_zone0/temp`/1000))")        os.system
         cpu_temp = ("echo '{}' | /opt/vc/bin/vcgencmd measure_temp")
-        word.replace("temp=","")
+        cpu_temp =  word.replace("temp=","")
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
         #get width of texts
 
