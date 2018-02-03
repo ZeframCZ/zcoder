@@ -34,6 +34,12 @@ font = ImageFont.load_default()
 update = True
 timer = 10
 
+#--------------------GET STUFF FROM SENSORS--------------------
+sens_temperature = weather.temperature()
+sens_pressure = weather.pressure()
+sens_light = light.light()
+sens_accX , sens_accY , sens_accZ = motion.accelerometer()
+
 #--------------------START DRAWING STUFF--------------------
 
 def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
@@ -51,10 +57,13 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     image.paste(rotated, position, rotated)
 while(True):
     if (update):
-        draw_rotated_text(disp.buffer, 'Teplota: '+str(weather.temperature()), (10, 10), 90, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Tlak: '+str(weather.pressure()), (30, 10), 90, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Svetlo: '+str(light.light()), (50, 10), 90, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Akcelerace: {0}'str(motion.accelerometer()), (70, 10), 90, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'Teplota: '+str(sens_temperature), (10, 10), 90, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Tlak: '+str(sens_pressure), (30, 10), 90, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Svetlo: '+str(sens_light), (50, 10), 90, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Akcelerace', (70, 10), 90, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'X: ' + str(sens_accX), (90, 10), 90, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'Y: ' + str(sens_accY), (110, 10), 90, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'Z: ' + str(sens_accZ), (130, 10), 90, font, fill=(255, 255, 255))
         disp.display()
         update = False
     if (timer > 1):
