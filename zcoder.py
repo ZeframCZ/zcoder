@@ -54,14 +54,14 @@ while(True):#repeat
         sens_pressure = weather.pressure()
         sens_light = light.light()
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
-        #--------------------DRAW STUFF FROM SENSORS--------------------
-        draw_rotated_text(disp.buffer, 'Teplota: '+str(sens_temperature), (10, 10), text_rotation, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Tlak: '+str(sens_pressure), (10, 30), text_rotation, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Svetlo: '+str(sens_light), (10, 50), text_rotation, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, 'Akcelerace', (10, 70), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'X: ' + str(sens_accX), (10, 90), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'Y: ' + str(sens_accY), (10, 110), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, 'Z: ' + str(sens_accZ), (10, 130), text_rotation, font, fill=(255, 255, 255))
+        #--------------------DRAW STUFF FROM SENSORS--------------------240x320
+        draw_rotated_text(disp.buffer, 'Teplota: '+str(sens_temperature), (10, 310), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Tlak: '+str(sens_pressure), (10, 290), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Svetlo: '+str(sens_light), (10, 270), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, 'Akcelerace', (10, 250), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'X: ' + str(sens_accX), (10, 230), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'Y: ' + str(sens_accY), (10, 210), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, 'Z: ' + str(sens_accZ), (10, 190), text_rotation, font, fill=(255, 255, 255))
         disp.display()
         update = False
     ##--------------------DELAY SCREEN UPDATE--------------------
