@@ -10,7 +10,8 @@ from envirophat import light
 from envirophat import motion
 
 import math
-import subprocess
+#import subprocess
+import os
 
 import Adafruit_ILI9341 as TFT
 import Adafruit_GPIO as GPIO
@@ -62,6 +63,7 @@ while(True):#repeat
         #cpu_temp = (subprocess.check_output(["/opt/vc/bin/vcgencmd", "measure_temp"]))
         #cpu_temp = (subprocess.check_output(["echo $((`cat /sys/class/thermal/thermal_zone0/temp`/1000))"]))         cmd = "echo '{}' | iconv ...".format(text)
         cpu_temp = "echo '{}' | ((`cat /sys/class/thermal/thermal_zone0/temp`/1000))"#.format(str)
+        os.system(cpu_temp)
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
         #get width of texts
 
