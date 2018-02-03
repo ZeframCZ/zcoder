@@ -61,7 +61,7 @@ while(True):#repeat
         w1,h1 = draw.textsize("ZCoder 2.0")
         w2, h2 = draw.textsize("Teplota: "+str(math.floor(sens_temperature)))
         w3, h3 = draw.textsize("Tlak: "+str(math.floor(sens_pressure)))
-        w4, h4 = draw.textsize("Svetlo: "+str(sens_light), (10, 230))
+        w4, h4 = draw.textsize("Svetlo: "+str(sens_light))
         w5, h5 = draw.textsize("Akcelerace")
         w6, h6 = draw.textsize("X: " + str(math.floor(sens_accX)))
         w7, h7 = draw.textsize("Y: " + str(math.floor(sens_accY)))
