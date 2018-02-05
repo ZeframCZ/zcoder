@@ -93,8 +93,8 @@ while(True):#repeat
         draw_rotated_text(disp.buffer, "Y: " + str(math.floor(sens_accY)), (screen_width-w7,              50), text_rotation, font, fill=(255, 255, 255))
         draw_rotated_text(disp.buffer, "Z: " + str(math.floor(sens_accZ)), (screen_width-w8,              30), text_rotation, font, fill=(255, 255, 255))
 
-        X2 = math.sin(sens_heading)
-        Y2 = math.cos(sens_heading)
+        X2 = math.cos(sens_heading)
+        Y2 = math.sin(sens_heading)
         draw.line((120, 160, X2, Y2), fill=(255, 255, 255))
 
         disp.display()
