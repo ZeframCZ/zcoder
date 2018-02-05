@@ -60,7 +60,7 @@ while(True):#repeat
         sens_pressure = weather.pressure()
         sens_light = light.light()
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
-
+        sens_heading = motion.heading()
 
 
         #/opt/vc/bin/vcgencmd measure_temp
@@ -81,17 +81,20 @@ while(True):#repeat
         #w9, h9 = draw.textsize("teplota CPU: " + str(cpu_temp))
 
         draw_rotated_text(disp.buffer, "ZCoder 2.0", (screen_width-w1,                                    310), text_rotation, font,fill=(255, 255, 255))
-
-        draw_rotated_text(disp.buffer, "Teplota: "+str(math.floor(sens_temperature)), (screen_width-w2,   270), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, "Teplota: "+str(math.floor(sens_temperature)), (screen_width-w2,   280), text_rotation, font, fill=(255,255,255))
         #draw_rotated_text(disp.buffer, "Teplota CPU: " + str(cpu_temp), (screen_width - w9,               230),text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "Tlak: "+str(math.floor(sens_pressure)), (screen_width-w3,         250), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, "Svetlo: "+str(sens_light), (screen_width-w4,                      220), text_rotation, font, fill=(255,255,255))
 
-        draw_rotated_text(disp.buffer, "Tlak: "+str(math.floor(sens_pressure)), (screen_width-w3,         230), text_rotation, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, "Svetlo: "+str(sens_light), (screen_width-w4,                      210), text_rotation, font, fill=(255,255,255))
+        draw_rotated_text(disp.buffer, "Akcelerace", (screen_width-w5,                                    90), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "X: " + str(math.floor(sens_accX)), (screen_width-w6,              70), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "Y: " + str(math.floor(sens_accY)), (screen_width-w7,              50), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "Z: " + str(math.floor(sens_accZ)), (screen_width-w8,              30), text_rotation, font, fill=(255, 255, 255))
 
-        draw_rotated_text(disp.buffer, "Akcelerace", (screen_width-w5,                                    100), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, "X: " + str(math.floor(sens_accX)), (screen_width-w6,              80), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, "Y: " + str(math.floor(sens_accY)), (screen_width-w7,              60), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer, "Z: " + str(math.floor(sens_accZ)), (screen_width-w8,              40), text_rotation, font, fill=(255, 255, 255))
+        X2 = math.sin(sens_heading)
+        Y2 = math.cos(sens_heading)
+        draw.line((120, 160, X2, Y2), fill=(255, 255, 255))
+
         disp.display()
         update = False
     ##--------------------DELAY SCREEN UPDATE--------------------
