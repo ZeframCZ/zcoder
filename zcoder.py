@@ -60,10 +60,13 @@ while(True):#repeat
         sens_pressure = weather.pressure()
         sens_light = light.light()
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
+
+
+
         #/opt/vc/bin/vcgencmd measure_temp
         #cpu_temp = os.system("echo '{}' | ((`cat /sys/class/thermal/thermal_zone0/temp`/1000))")        os.system
-        cpu_temp = ("echo '{}' | /opt/vc/bin/vcgencmd measure_temp")
-        cpu_temp =  word.replace("temp=","")
+        #cpu_temp = ("echo '{}' | /opt/vc/bin/vcgencmd measure_temp")
+
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
         #get width of texts
 
