@@ -78,12 +78,12 @@ while(True):#repeat
         w6, h6 = draw.textsize("X: " + str(math.floor(sens_accX)))
         w7, h7 = draw.textsize("Y: " + str(math.floor(sens_accY)))
         w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
-        w9, h9 = draw.textsize("teplota CPU: " + str(cpu_temp))
+        #w9, h9 = draw.textsize("teplota CPU: " + str(cpu_temp))
 
         draw_rotated_text(disp.buffer, "ZCoder 2.0", (screen_width-w1,                                    310), text_rotation, font,fill=(255, 255, 255))
 
         draw_rotated_text(disp.buffer, "Teplota: "+str(math.floor(sens_temperature)), (screen_width-w2,   270), text_rotation, font, fill=(255,255,255))
-        draw_rotated_text(disp.buffer, "Teplota CPU: " + str(cpu_temp), (screen_width - w9,               230),text_rotation, font, fill=(255, 255, 255))
+        #draw_rotated_text(disp.buffer, "Teplota CPU: " + str(cpu_temp), (screen_width - w9,               230),text_rotation, font, fill=(255, 255, 255))
 
         draw_rotated_text(disp.buffer, "Tlak: "+str(math.floor(sens_pressure)), (screen_width-w3,         230), text_rotation, font, fill=(255,255,255))
         draw_rotated_text(disp.buffer, "Svetlo: "+str(sens_light), (screen_width-w4,                      210), text_rotation, font, fill=(255,255,255))
