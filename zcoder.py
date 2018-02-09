@@ -97,7 +97,7 @@ while(True):#repeat
         Y2 = (math.sin(sens_heading*180/math.pi)*20)+160
         draw_rotated_text(disp.buffer, "X2: " + str(X2), (10, 150), text_rotation, font, fill=(255, 255, 255))
         draw_rotated_text(disp.buffer, "Y2: " + str(Y2), (10, 110), text_rotation, font, fill=(255, 255, 255))
-        draw.line(120, 160, X2, Y2, fill=(255, 255, 255))
+        draw.line((120, 160, X2, Y2), fill=(255, 255, 255))
 
         disp.display()
         update = False
