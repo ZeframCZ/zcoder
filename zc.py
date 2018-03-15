@@ -61,6 +61,7 @@ while(True):#repeat
         sens_light = light.light()
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
         sens_heading = motion.heading()
+        sens_height = 9999;
         sens_distance = 0.0
 
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
@@ -80,11 +81,17 @@ while(True):#repeat
 
         #Left up temperature
         draw.rectangle((130, 295, 230, 195), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (15,30),text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (135,300),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
         draw.rectangle((10, 295, 110, 195), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (135, 30), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (15, 300), text_rotation, font,fill=(255, 255, 255))
 
+        #Left mid light
+        draw.rectangle((130, 90, 230, 190), outline=(255, 255, 255), fill=(0, 120, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (135, 190), text_rotation, font,fill=(255, 255, 255))
+        #right mid height
+        draw.rectangle((10, 90, 110, 190), outline=(255, 255, 255), fill=(0, 120, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (15, 190), text_rotation, font,fill=(255, 255, 255))
 
 
         #draw_rotated_text(disp.buffer, "Tlak: " + str(math.floor(sens_pressure)), (screen_width - w3, 260),text_rotation, font, fill=(255, 255, 255))
