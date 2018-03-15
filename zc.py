@@ -36,7 +36,7 @@ disp.begin()
 disp.clear((0, 0, 0))
 draw = disp.draw()
 #font = ImageFont.load_default(12)
-font = ImageFont.FreeTypeFont("arial.pil", 12)
+font = ImageFont.FreeTypeFont("arial.ttf", 12)
 #font_large = ImageFont.truetype(12)ImageFont.truetype("arial.ttf", fontsize)
 #--------------------SET UP PLACEHOLDERS--------------------
 update = True
