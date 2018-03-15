@@ -35,8 +35,9 @@ disp = TFT.ILI9341(DC, rst=RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_h
 disp.begin()
 disp.clear((0, 0, 0))
 draw = disp.draw()
-font = ImageFont.load_default(12)
-#font_large = ImageFont.truetype(12)
+#font = ImageFont.load_default(12)
+font = ImageFont.truetype("arial.ttf", 12)
+#font_large = ImageFont.truetype(12)ImageFont.truetype("arial.ttf", fontsize)
 #--------------------SET UP PLACEHOLDERS--------------------
 update = True
 timer = 10
