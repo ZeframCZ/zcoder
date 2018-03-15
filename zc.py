@@ -36,7 +36,7 @@ disp.begin()
 disp.clear((0, 0, 0))
 draw = disp.draw()
 #font = ImageFont.load_default()
-font = ImageFont.truetype('arial.ttf', 8, encoding="unic")
+font = ImageFont.truetype("/usr/share/fonts/truetype/lato/Lato-Medium.ttf", 8, encoding="unic")
 #font_large = ImageFont.truetype(12)ImageFont.truetype("arial.ttf", fontsize)
 #--------------------SET UP PLACEHOLDERS--------------------
 update = True
