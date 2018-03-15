@@ -74,7 +74,7 @@ while(True):#repeat
         w7, h7 = draw.textsize("Y: " + str(math.floor(sens_accY)))
         w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
         w10, h10 = draw.textsize("Kompas: " + str(sens_heading))
-        #w11, h11 = draw.textsize("Vzdálenost: " + str(sens_distance))
+        #w11, h11 = draw.textsize("Vzdalenost: " + str(sens_distance))
 
         #draw_rotated_text(disp.buffer, "ZCoder 2.0", (screen_width - w1, 310), text_rotation, font,fill=(255, 255, 255))
         draw.rectangle((10, 25, 110, 125), outline=(255, 255, 255), fill=(0, 120, 255))
