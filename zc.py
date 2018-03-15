@@ -77,10 +77,10 @@ while(True):#repeat
         #w11, h11 = draw.textsize("Vzdalenost: " + str(sens_distance))
 
         #draw_rotated_text(disp.buffer, "ZCoder 2.0", (screen_width - w1, 310), text_rotation, font,fill=(255, 255, 255))
-        draw.rectangle((10, 25, 110, 125), outline=(255, 255, 255), fill=(0, 120, 255))
+        draw.rectangle((10, 295, 110, 195), outline=(255, 255, 255), fill=(0, 120, 255))
         draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (15,30),text_rotation, font, fill=(255, 255, 255))
 
-        draw.rectangle((130, 25, 230, 125), outline=(255, 255, 255), fill=(120, 255, 0))
+        draw.rectangle((130, 295, 230, 195), outline=(255, 255, 255), fill=(120, 255, 0))
         draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (135, 30), text_rotation, font,fill=(255, 255, 255))
         #draw_rotated_text(disp.buffer, "Tlak: " + str(math.floor(sens_pressure)), (screen_width - w3, 260),text_rotation, font, fill=(255, 255, 255))
         #draw_rotated_text(disp.buffer, "Svetlo: " + str(sens_light), (screen_width - w4, 240), text_rotation, font,fill=(255, 255, 255))
