@@ -35,8 +35,8 @@ disp = TFT.ILI9341(DC, rst=RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_h
 disp.begin()
 disp.clear((0, 0, 0))
 draw = disp.draw()
-font = ImageFont.load_default()
-font_large = ImageFont.truetype(12)
+font = ImageFont.load_default(12)
+#font_large = ImageFont.truetype(12)
 #--------------------SET UP PLACEHOLDERS--------------------
 update = True
 timer = 10
@@ -87,24 +87,24 @@ while(True):#repeat
 
         #Left up temperature
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (132-10,225-10),text_rotation, font_large, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (132-10,225-10),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
         draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (23-10, 225-10), text_rotation, font_large,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (23-10, 225-10), text_rotation, font,fill=(255, 255, 255))
 
         #Left mid light
         draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 130-10), text_rotation, font_large,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 130-10), text_rotation, font,fill=(255, 255, 255))
         #right mid height
         draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23-10, 130-10), text_rotation, font_large,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23-10, 130-10), text_rotation, font,fill=(255, 255, 255))
 
         # Left mid light
         draw.rectangle((217, 120,  132, 35), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font_large,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
         # right mid height
         draw.rectangle((108, 120, 23, 35), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23-10, 35-10), text_rotation, font_large,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23-10, 35-10), text_rotation, font,fill=(255, 255, 255))
 
         #draw line,date and time
         draw.line((0, 10, 240, 10), fill=(255,255,255))
