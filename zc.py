@@ -17,6 +17,9 @@ import Adafruit_ILI9341 as TFT
 import Adafruit_GPIO as GPIO
 import Adafruit_GPIO.SPI as SPI
 
+#import date
+from datetime import datetime
+
 #-----REFERENCE STUFF-----
 #draw.ellipse((10, 10, 110, 80), outline=(0,255,0), fill=(0,0,255))
 #draw.rectangle((10, 90, 110, 160), outline=(255,255,0), fill=(255,0,255))
@@ -64,6 +67,8 @@ while(True):#repeat
         sens_height = 9999;
         sens_distance = 0.0
 
+        date = datetime.now()
+
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
 
         w1, h1 = draw.textsize("ZCoder 2.0")
@@ -81,34 +86,29 @@ while(True):#repeat
 
         #Left up temperature
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (132+10,225+10),text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (132-10,225-10),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
         draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (23+10, 225+10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (23-10, 225-10), text_rotation, font,fill=(255, 255, 255))
 
         #Left mid light
         draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132+10, 130+10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 130-10), text_rotation, font,fill=(255, 255, 255))
         #right mid height
         draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23+10, 130+10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23-10, 130-10), text_rotation, font,fill=(255, 255, 255))
 
         # Left mid light
         draw.rectangle((217, 120,  132, 35), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132+10, 35+10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
         # right mid height
         draw.rectangle((108, 120, 23, 35), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23+10, 35+10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23-10, 35-10), text_rotation, font,fill=(255, 255, 255))
 
-        #draw_rotated_text(disp.buffer, "Tlak: " + str(math.floor(sens_pressure)), (screen_width - w3, 260),text_rotation, font, fill=(255, 255, 255))
-        #draw_rotated_text(disp.buffer, "Svetlo: " + str(sens_light), (screen_width - w4, 240), text_rotation, font,fill=(255, 255, 255))
-        #draw_rotated_text(disp.buffer, "Kompas: " + str(sens_heading), (screen_width - w10, 220), text_rotation, font,fill=(255, 255, 255))
-        #draw_rotated_text(disp.buffer, "Vzdalenost: " + str(sens_distance), (screen_width - w11, 200), text_rotation,font, fill=(255, 255, 255))
+        #draw line,date and time
+        draw.line((0, 10, 240, 10), fill=(255,255,255))
+        draw_rotated_text(disp.buffer, str(date), (10, 10), text_rotation, font,fill=(255, 255, 255))
 
-        #draw_rotated_text(disp.buffer, "Akcelerace", (screen_width - w5, 90), text_rotation, font, fill=(255, 255, 255))
-        #draw_rotated_text(disp.buffer, "X: " + str(math.floor(sens_accX)), (screen_width - w6, 70), text_rotation, font,fill=(255, 255, 255))
-        #draw_rotated_text(disp.buffer, "Y: " + str(math.floor(sens_accY)), (screen_width - w7, 50), text_rotation, font,fill=(255, 255, 255))
-        #draw_rotated_text(disp.buffer, "Z: " + str(math.floor(sens_accZ)), (screen_width - w8, 30), text_rotation, font,fill=(255, 255, 2
 
 
 
