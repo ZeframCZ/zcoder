@@ -36,7 +36,7 @@ disp.begin()
 disp.clear((0, 0, 0))
 draw = disp.draw()
 font = ImageFont.load_default()
-font_large = ImageFont.truetype("arial.ttf", 20)
+font_large = ImageFont.truetype("arial.ttf", 12)
 #--------------------SET UP PLACEHOLDERS--------------------
 update = True
 timer = 10
