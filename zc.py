@@ -36,7 +36,7 @@ disp.begin()
 disp.clear((0, 0, 0))
 draw = disp.draw()
 #font = ImageFont.load_default()
-font = ImageFont.truetype("/usr/share/fonts/truetype/lato/Lato-Medium.ttf", 40, encoding="unic")
+font = ImageFont.truetype("/usr/share/fonts/truetype/lato/Lato-Medium.ttf", 25, encoding="unic")
 #font_large = ImageFont.truetype(12)ImageFont.truetype("arial.ttf", fontsize)
 #--------------------SET UP PLACEHOLDERS--------------------
 update = True
@@ -66,7 +66,7 @@ while(True):#repeat
         sens_light = light.light()
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
         sens_heading = motion.heading()
-        sens_height = 9999;
+        sens_height = 600;
         sens_distance = 0.0
 
         date = datetime.now()
@@ -88,24 +88,24 @@ while(True):#repeat
 
         #Left up temperature
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (132-10,225-10),text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (132-w2,225-h2),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
         draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (23-10, 225-10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (23-w3, 225-h3), text_rotation, font,fill=(255, 255, 255))
 
         #Left mid light
         draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 130-10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-w4, 130-h4), text_rotation, font,fill=(255, 255, 255))
         #right mid height
         draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23-10, 130-10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23-w5, 130-h5), text_rotation, font,fill=(255, 255, 255))
 
         # Left mid light
-        draw.rectangle((217, 120,  132, 35), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
+        #draw.rectangle((217, 120,  132, 35), outline=(255, 255, 255), fill=(0, 120, 255))
+        #draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
         # right mid height
-        draw.rectangle((108, 120, 23, 35), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23-10, 35-10), text_rotation, font,fill=(255, 255, 255))
+        #draw.rectangle((108, 120, 23, 35), outline=(255, 255, 255), fill=(120, 255, 0))
+        #draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23-10, 35-10), text_rotation, font,fill=(255, 255, 255))
 
         #draw line,date and time
         draw.line((0, 10, 240, 10), fill=(255,255,255))
