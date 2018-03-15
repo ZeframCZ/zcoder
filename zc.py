@@ -81,24 +81,24 @@ while(True):#repeat
 
         #Left up temperature
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (217+10,310+10),text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (132+10,225+10),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
         draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (108+10, 310+10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (23+10, 225+10), text_rotation, font,fill=(255, 255, 255))
 
         #Left mid light
         draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (217+10, 215+10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132+10, 130+10), text_rotation, font,fill=(255, 255, 255))
         #right mid height
         draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (108+10, 215+10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23+10, 130+10), text_rotation, font,fill=(255, 255, 255))
 
         # Left mid light
         draw.rectangle((217, 120,  132, 35), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (217+10, 120+10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132+10, 35+10), text_rotation, font,fill=(255, 255, 255))
         # right mid height
         draw.rectangle((108, 120, 23, 35), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (108+10, 120+10), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23+10, 35+10), text_rotation, font,fill=(255, 255, 255))
 
         #draw_rotated_text(disp.buffer, "Tlak: " + str(math.floor(sens_pressure)), (screen_width - w3, 260),text_rotation, font, fill=(255, 255, 255))
         #draw_rotated_text(disp.buffer, "Svetlo: " + str(sens_light), (screen_width - w4, 240), text_rotation, font,fill=(255, 255, 255))
