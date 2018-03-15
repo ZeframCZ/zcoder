@@ -85,7 +85,7 @@ while(True):#repeat
         #draw_rotated_text(disp.buffer, "Tlak: " + str(math.floor(sens_pressure)), (screen_width - w3, 260),text_rotation, font, fill=(255, 255, 255))
         #draw_rotated_text(disp.buffer, "Svetlo: " + str(sens_light), (screen_width - w4, 240), text_rotation, font,fill=(255, 255, 255))
         #draw_rotated_text(disp.buffer, "Kompas: " + str(sens_heading), (screen_width - w10, 220), text_rotation, font,fill=(255, 255, 255))
-        #draw_rotated_text(disp.buffer, "Vzdálenost: " + str(sens_distance), (screen_width - w11, 200), text_rotation,font, fill=(255, 255, 255))
+        #draw_rotated_text(disp.buffer, "Vzdalenost: " + str(sens_distance), (screen_width - w11, 200), text_rotation,font, fill=(255, 255, 255))
 
         #draw_rotated_text(disp.buffer, "Akcelerace", (screen_width - w5, 90), text_rotation, font, fill=(255, 255, 255))
         #draw_rotated_text(disp.buffer, "X: " + str(math.floor(sens_accX)), (screen_width - w6, 70), text_rotation, font,fill=(255, 255, 255))
