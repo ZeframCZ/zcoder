@@ -79,6 +79,8 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
 
 
 while(True):#repeat
+    disp.clear((0, 0, 0))
+
     dist_sens = False
     #--------------------DISTANCE SENSOR DATA SCREEN--------------------
     if (dist_sens):
@@ -153,7 +155,7 @@ while(True):#repeat
         xx = (math.cos(-(sens_heading * math.pi / 180)) * 40) + 67
         yy = (math.sin(-(sens_heading * math.pi / 180)) * 40) + 79
         draw.line((67, 79, xx, yy), fill=(255, 0, 0))
-        disp.display()
+
 
 
         if (update):
@@ -168,4 +170,4 @@ while(True):#repeat
         #draw line,date and time
         draw.line((0, 10, 240, 10), fill=(255,255,255))
         draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
-        disp.display()
+    disp.display()
