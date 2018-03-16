@@ -139,11 +139,11 @@ while(True):#repeat
         #draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
         # right down compass
         draw.ellipse((23, 35, 108, 120), outline=(255, 255, 255), fill=(0, 120, 255))
-        xx = (math.cos(sens_heading * math.pi / 180) * 40) + 67
-        yy = (math.sin(sens_heading * math.pi / 180) * 40) + 79
+        xx = (math.cos(-sens_heading * math.pi / 180) * 40) + 67
+        yy = (math.sin(-sens_heading * math.pi / 180) * 40) + 79
         draw.line((67, 79, xx, yy), fill=(0, 255, 0), width = (3))
-        xx = (math.cos((sens_heading+180) * math.pi / 180) * 40) + 67
-        yy = (math.sin((sens_heading+180) * math.pi / 180) * 40) + 79
+        xx = (math.cos((-sens_heading+180) * math.pi / 180) * 40) + 67
+        yy = (math.sin((-sens_heading+180) * math.pi / 180) * 40) + 79
         draw.line((67, 79, xx, yy), fill=(255, 0, 0), width = (3))
 
 
