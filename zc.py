@@ -20,6 +20,18 @@ import Adafruit_GPIO.SPI as SPI
 #import date
 from datetime import datetime
 
+
+
+import RPi.GPIO as GPIO
+import time
+GPIO.setmode(GPIO.BCM)
+
+TRIG = 17
+ECHO = 27
+
+
+
+
 #-----REFERENCE STUFF-----
 #draw.ellipse((10, 10, 110, 80), outline=(0,255,0), fill=(0,0,255))
 #draw.rectangle((10, 90, 110, 160), outline=(255,255,0), fill=(255,0,255))
