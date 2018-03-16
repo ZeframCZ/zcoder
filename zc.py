@@ -119,10 +119,10 @@ while(True):#repeat
 
         disp.display()
         update = False
-    ##--------------------DELAY SCREEN UPDATE--------------------
-    if (timer > 1):
-        timer -= 1
-    if (timer < 2):
-        disp.clear((0, 0, 0))
-        update = True
-        timer = 5#delay time
+##--------------------DELAY SCREEN UPDATE--------------------
+if (timer > 1):
+    timer -= 1
+if (timer < 2):
+    disp.clear((0, 0, 0))
+    update = True
+    timer = 5#delay time
