@@ -82,7 +82,7 @@ while(True):#repeat
     disp.clear((0, 0, 0))
     dist_sens = False
     #--------------------DISTANCE SENSOR DATA SCREEN--------------------
-    if (dist_sens):
+    if (dist_sens == True):
         GPIO.output(TRIG, False)
         time.sleep(0.1)
         GPIO.output(TRIG, True)
@@ -97,7 +97,7 @@ while(True):#repeat
         distance = round(distance, 2)
         if distance > 2 and distance < 400:  # Check whether the distance is within range
             w1, h1 = draw.textsize(""+ str(distance))
-            draw_rotated_text(disp.buffer, "" + str(distance - 0.5) + "cm", (240-w1, 300), text_rotation, font, fill=(255, 255, 255))
+            draw_rotated_text(disp.buffer, "" + str(distance - 0.5) + "cm", (120-w1, 300), text_rotation, font, fill=(255, 255, 255))
 
     #--------------------MAIN SENSOR DATA--------------------
     if (dist_sens == False):
