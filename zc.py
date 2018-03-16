@@ -61,69 +61,69 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     # Paste the text into the image, using it as a mask for transparency.
     image.paste(rotated, position, rotated)
 while(True):#repeat
-        if dist_sens = False:
-            #--------------------GET STUFF FROM SENSORS--------------------
-            sens_temperature = weather.temperature()
-            sens_pressure = weather.pressure()
-            sens_light = light.light()
-            sens_accX, sens_accY, sens_accZ = motion.accelerometer()
-            sens_heading = motion.heading()
-            sens_height = 600
-            sens_distance = 0.0
+            if dist_sens = False:
+                #--------------------GET STUFF FROM SENSORS--------------------
+                sens_temperature = weather.temperature()
+                sens_pressure = weather.pressure()
+                sens_light = light.light()
+                sens_accX, sens_accY, sens_accZ = motion.accelerometer()
+                sens_heading = motion.heading()
+                sens_height = 600
+                sens_distance = 0.0
 
-            #--------------------DRAW STUFF FROM SENSORS--------------------240x320
+                #--------------------DRAW STUFF FROM SENSORS--------------------240x320
 
-            w1, h1 = draw.textsize("ZCoder 2.0")
-            w2, h2 = draw.textsize("" + str(math.floor(sens_temperature)))
-            w3, h3 = draw.textsize("" + str(math.floor(sens_pressure)))
-            w4, h4 = draw.textsize("" + str(sens_light))
-            w5, h5 = draw.textsize("")
-            w6, h6 = draw.textsize("X: " + str(math.floor(sens_accX)))
-            w7, h7 = draw.textsize("Y: " + str(math.floor(sens_accY)))
-            w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
-            w10, h10 = draw.textsize("Kompas: " + str(sens_heading))
-            w11, h11 = draw.textsize("" + str(sens_height))
-            #w11, h11 = draw.textsize("Vzdalenost: " + str(sens_distance))
+                w1, h1 = draw.textsize("ZCoder 2.0")
+                w2, h2 = draw.textsize("" + str(math.floor(sens_temperature)))
+                w3, h3 = draw.textsize("" + str(math.floor(sens_pressure)))
+                w4, h4 = draw.textsize("" + str(sens_light))
+                w5, h5 = draw.textsize("")
+                w6, h6 = draw.textsize("X: " + str(math.floor(sens_accX)))
+                w7, h7 = draw.textsize("Y: " + str(math.floor(sens_accY)))
+                w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
+                w10, h10 = draw.textsize("Kompas: " + str(sens_heading))
+                w11, h11 = draw.textsize("" + str(sens_height))
+                #w11, h11 = draw.textsize("Vzdalenost: " + str(sens_distance))
 
-            #draw_rotated_text(disp.buffer, "ZCoder 2.0", (screen_width - w1, 310), text_rotation, font,fill=(255, 255, 255))
+                #draw_rotated_text(disp.buffer, "ZCoder 2.0", (screen_width - w1, 310), text_rotation, font,fill=(255, 255, 255))
 
-            #Left up temperature
-            draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-            draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (174-w2,290-h2),text_rotation, font, fill=(255, 255, 255))
-            #right up pressure
-            draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-            draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (67-w3, 290-h3), text_rotation, font,fill=(255, 255, 255))
+                #Left up temperature
+                draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
+                draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (174-w2,290-h2),text_rotation, font, fill=(255, 255, 255))
+                #right up pressure
+                draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(0, 120, 255))
+                draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (67-w3, 290-h3), text_rotation, font,fill=(255, 255, 255))
 
-            #Left mid light
-            draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-            draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (174-w4, 200-h4), text_rotation, font,fill=(255, 255, 255))
-            #right mid height
-            draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-            draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (67-w11, 200-h11), text_rotation, font,fill=(255, 255, 255))
+                #Left mid light
+                draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(0, 120, 255))
+                draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (174-w4, 200-h4), text_rotation, font,fill=(255, 255, 255))
+                #right mid height
+                draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(0, 120, 255))
+                draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (67-w11, 200-h11), text_rotation, font,fill=(255, 255, 255))
 
-            # Left down acc
-            #draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
-            # right down compass
-            draw.ellipse((23, 35, 108, 120), outline=(255, 255, 255), fill=(0, 120, 255))
-            xx = (math.cos(sens_heading * math.pi / 180) * 40) + 67
-            yy = (math.sin(sens_heading * math.pi / 180) * 40) + 79
-            draw.line((67, 79, xx, yy), fill=(0, 255, 0))
-            xx = (math.cos(-(sens_heading * math.pi / 180)) * 40) + 67
-            yy = (math.sin(-(sens_heading * math.pi / 180)) * 40) + 79
-            draw.line((67, 79, xx, yy), fill=(255, 0, 0))
+                # Left down acc
+                #draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
+                # right down compass
+                draw.ellipse((23, 35, 108, 120), outline=(255, 255, 255), fill=(0, 120, 255))
+                xx = (math.cos(sens_heading * math.pi / 180) * 40) + 67
+                yy = (math.sin(sens_heading * math.pi / 180) * 40) + 79
+                draw.line((67, 79, xx, yy), fill=(0, 255, 0))
+                xx = (math.cos(-(sens_heading * math.pi / 180)) * 40) + 67
+                yy = (math.sin(-(sens_heading * math.pi / 180)) * 40) + 79
+                draw.line((67, 79, xx, yy), fill=(255, 0, 0))
 
 
-            if (update):
-                update = False
-            if (timer > 1):
-                timer -= 1
-            if (timer < 2):
-                disp.clear((0, 0, 0))
-                update = True
-                timer = 5  # delay time
-            date = datetime.now()
-            #draw line,date and time
-            draw.line((0, 10, 240, 10), fill=(255,255,255))
-            draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
+                if (update):
+                    update = False
+                if (timer > 1):
+                    timer -= 1
+                if (timer < 2):
+                    disp.clear((0, 0, 0))
+                    update = True
+                    timer = 5  # delay time
+                date = datetime.now()
+                #draw line,date and time
+                draw.line((0, 10, 240, 10), fill=(255,255,255))
+                draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
 
-            disp.display()
+                disp.display()
