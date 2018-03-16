@@ -37,6 +37,7 @@ disp.clear((0, 0, 0))
 draw = disp.draw()
 #font = ImageFont.load_default()
 font = ImageFont.truetype("/usr/share/fonts/truetype/lato/Lato-Medium.ttf", 25, encoding="unic")
+font_small = ImageFont.truetype("/usr/share/fonts/truetype/lato/Lato-Medium.ttf", 8, encoding="unic")
 #font_large = ImageFont.truetype(12)ImageFont.truetype("arial.ttf", fontsize)
 #--------------------SET UP PLACEHOLDERS--------------------
 update = True
@@ -88,7 +89,7 @@ while(True):#repeat
 
         #Left up temperature
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (132-w2,225-h2),text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (217-w2,310-h2),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
         draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(120, 255, 0))
         draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (23-w3, 225-h3), text_rotation, font,fill=(255, 255, 255))
@@ -109,7 +110,7 @@ while(True):#repeat
 
         #draw line,date and time
         draw.line((0, 10, 240, 10), fill=(255,255,255))
-        draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
 
 
 
