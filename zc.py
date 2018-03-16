@@ -153,6 +153,7 @@ while(True):#repeat
         xx = (math.cos(-(sens_heading * math.pi / 180)) * 40) + 67
         yy = (math.sin(-(sens_heading * math.pi / 180)) * 40) + 79
         draw.line((67, 79, xx, yy), fill=(255, 0, 0))
+        disp.display()
 
 
         if (update):
