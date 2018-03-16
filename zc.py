@@ -125,7 +125,7 @@ while(True):#repeat
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
         draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (174-w2,290-h2),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
-        draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(0, 120, 255))
+        draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(light.rgb()))
         draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (67-w3, 290-h3), text_rotation, font,fill=(255, 255, 255))
 
         #Left mid light
