@@ -44,6 +44,7 @@ update = True
 timer = 10
 text_rotation = 180
 screen_width = 230
+dist_sens = False#switch betwen screens
 
 #--------------------DEFINE DRAW FUNCTION--------------------
 def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
@@ -60,14 +61,14 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     # Paste the text into the image, using it as a mask for transparency.
     image.paste(rotated, position, rotated)
 while(True):#repeat
+    if dist_sens = False:
         #--------------------GET STUFF FROM SENSORS--------------------
-
         sens_temperature = weather.temperature()
         sens_pressure = weather.pressure()
         sens_light = light.light()
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
         sens_heading = motion.heading()
-        sens_height = 600;
+        sens_height = 600
         sens_distance = 0.0
 
         if (update):
