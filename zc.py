@@ -98,7 +98,8 @@ while(True):#repeat
         distance = round(distance, 2)
         if distance > 2 and distance < 400:  # Check whether the distance is within range
             dsens_status = "Done"
-            draw_rotated_text(disp.buffer, "Distance: " + str(distance - 0.5) + "cm", (220, 300), text_rotation, font, fill=(255, 255, 255))
+            w1, h1 = draw.textsize(""+ str(distance))
+            draw_rotated_text(disp.buffer, "" + str(distance - 0.5) + "cm", (0+w1, 300), text_rotation, font, fill=(255, 255, 255))
         else:
             dsens_status = "Out of sensor range"
 
