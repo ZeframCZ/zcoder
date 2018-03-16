@@ -108,7 +108,7 @@ while(True):#repeat
         xx = (math.cos(sens_heading) * 20) + 67
         yy = (math.sin(sens_heading) * 20) + 79
         draw.ellipse((23, 35, 108, 120), outline = (255, 255, 255), fill=(255,255,255))
-        draw.line((67, 79, xx, yy), outline = (255, 255, 255), fill=(255,255,255))
+        draw.line((67, 79, xx, yy), fill=(255,255,255))
 
         #draw line,date and time
         #draw.line((132, 35, 217, 120), outline = (255, 255, 255), fill=(255,255,255))
