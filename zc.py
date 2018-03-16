@@ -153,7 +153,7 @@ while(True):#repeat
     if (timer > 1):
         timer -= 1
     if (timer < 2):
-        disp.clear((0, 0, 0))
+        #disp.clear((0, 0, 0))
         update = True
         timer = 5  # delay time
         date = datetime.now()
