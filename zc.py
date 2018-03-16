@@ -79,12 +79,10 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
 
 
 while(True):#repeat
-
+    disp.clear((0, 0, 0))
     dist_sens = True
     #--------------------DISTANCE SENSOR DATA SCREEN--------------------
     if (dist_sens):
-        disp.clear((0, 0, 0))
-
         GPIO.output(TRIG, False)
         dsens_status = "Waitng for sensor to settle"
         time.sleep(0.1)
@@ -100,11 +98,11 @@ while(True):#repeat
         distance = round(distance, 2)
         if distance > 2 and distance < 400:  # Check whether the distance is within range
             dsens_status = "Done"
-            draw_rotated_text(disp.buffer, "Distance: " + str(distance - 0.5) + "cm", (0, 200), text_rotation, font, fill=(255, 255, 255))
+            draw_rotated_text(disp.buffer, "Distance: " + str(distance - 0.5) + "cm", (0, 50), text_rotation, font, fill=(255, 255, 255))
         else:
             dsens_status = "Out of sensor range"
 
-        #draw_rotated_text(disp.buffer, "Sensor status: " + str(dsens_status), (150, 200), text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, "Sensor status: " + str(dsens_status), (0, 0), text_rotation, font, fill=(255, 255, 255))
     #--------------------MAIN SENSOR DATA--------------------
     if (dist_sens == False):
         #--------------------GET STUFF FROM SENSORS--------------------
