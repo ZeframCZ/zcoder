@@ -81,7 +81,7 @@ while(True):#repeat
 
     #--------------------DISTANCE SENSOR DATA SCREEN--------------------
     if (dist_sens == False):
-        draw.rectangle((240, 320, 0, 260), outline=(255, 255, 255), fill=(0, 120, 255))
+        draw.rectangle((217, 310, 23, 260), outline=(255, 255, 255), fill=(0, 120, 255))
 
         GPIO.output(TRIG, False)
         time.sleep(0.1)
