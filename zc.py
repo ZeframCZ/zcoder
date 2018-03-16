@@ -83,6 +83,7 @@ while(True):#repeat
         w7, h7 = draw.textsize("Y: " + str(math.floor(sens_accY)))
         w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
         w10, h10 = draw.textsize("Kompas: " + str(sens_heading))
+        w11, h11 = draw.textsize("" + str(sens_height))
         #w11, h11 = draw.textsize("Vzdalenost: " + str(sens_distance))
 
         #draw_rotated_text(disp.buffer, "ZCoder 2.0", (screen_width - w1, 310), text_rotation, font,fill=(255, 255, 255))
@@ -92,14 +93,14 @@ while(True):#repeat
         draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (174-w2,290-h2),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
         draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (67-w3/2, 290-h3/2), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (67-w3, 290-h3), text_rotation, font,fill=(255, 255, 255))
 
         #Left mid light
         draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (174-w4/2, 200-h4/2), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (174-w4, 200-h4), text_rotation, font,fill=(255, 255, 255))
         #right mid height
         draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(120, 255, 0))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (67-w5, 200-h5), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (67-w11, 200-h11), text_rotation, font,fill=(255, 255, 255))
 
         # Left mid light
         #draw.rectangle((217, 120,  132, 35), outline=(255, 255, 255), fill=(0, 120, 255))
