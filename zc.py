@@ -60,7 +60,7 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     # Paste the text into the image, using it as a mask for transparency.
     image.paste(rotated, position, rotated)
 while(True):#repeat
-    if (update):
+    #if (update):
         #--------------------GET STUFF FROM SENSORS--------------------
         sens_temperature = weather.temperature()
         sens_pressure = weather.pressure()
