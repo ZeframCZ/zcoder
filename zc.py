@@ -24,8 +24,8 @@ from datetime import datetime
 
 import RPi.GPIO as GPIO
 import time
-GPIO.setmode(GPIO.BCM)
 
+GPIO.setmode(GPIO.BCM)
 TRIG = 17
 ECHO = 27
 GPIO.setup(TRIG,GPIO.OUT)                  #Set pin as GPIO out
@@ -59,6 +59,8 @@ text_rotation = 180
 screen_width = 230
 dist_sens = False#switch between screens
 date = datetime.now()
+pulse_end = 0
+pulse_start = 0
 
 #--------------------DEFINE DRAW FUNCTION--------------------
 def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
@@ -89,7 +91,7 @@ while(True):#repeat
             pulse_start = time.time()
         while GPIO.input(ECHO) == 1:
             pulse_end = time.time()
-        pulse_duration = pulse_end - pulse_start
+        pulse_duration = (pulse_end - pulse_start)
         distance = pulse_duration * 17150
         distance = round(distance, 2)
         if distance > 2 and distance < 400:  # Check whether the distance is within range
@@ -100,7 +102,7 @@ while(True):#repeat
 
         draw_rotated_text(disp.buffer, "Sensor status: " + str(dsens_status), (240, 320), text_rotation, font, fill=(255, 255, 255))
     #--------------------MAIN SENSOR DATA--------------------
-    else:
+    if (dist_sens == False):
         #--------------------GET STUFF FROM SENSORS--------------------
         sens_temperature = weather.temperature()
         sens_pressure = weather.pressure()
