@@ -57,7 +57,7 @@ update = True
 timer = 10
 text_rotation = 180
 screen_width = 230
-dist_sens = True#switch between screens
+dist_sens = False#switch between screens
 
 #--------------------DEFINE DRAW FUNCTION--------------------
 def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
@@ -93,12 +93,11 @@ while(True):#repeat
         distance = round(distance, 2)
         if distance > 2 and distance < 400:  # Check whether the distance is within range
             dsens_status = "Done"
-            print"Distance:", distance - 0.5, "cm"  # Print distance with 0.5 cm calibration
+            draw_rotated_text(disp.buffer, "Distance: " + str(distance - 0.5) + "cm", (240, 300), text_rotation, font, fill=(255, 255, 255))
         else:
             dsens_status = "Out of sensor range"
 
         draw_rotated_text(disp.buffer, "Sensor status: " + str(dsens_status), (240, 320), text_rotation, font, fill=(255, 255, 255))
-        draw_rotated_text(disp.buffer,"Distance: " + str(distance - 0.5) + "cm", (240, 300), text_rotation, font, fill=(255, 255, 255))
     #--------------------MAIN SENSOR DATA--------------------
     else:
         #--------------------GET STUFF FROM SENSORS--------------------
