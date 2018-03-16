@@ -116,7 +116,7 @@ while(True):#repeat
 
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
 
-        w2, h2 = draw.textsize(str(math.floor(sens_temperature))+"°C")
+        w2, h2 = draw.textsize(str(math.floor(sens_temperature))+" C")
         w3, h3 = draw.textsize(str(math.floor(sens_pressure/100)+"hPa"))
         w4, h4 = draw.textsize(str(sens_light)+"lx")
         w11, h11 = draw.textsize(str(sens_height)+"m")
