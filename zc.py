@@ -82,7 +82,7 @@ while(True):#repeat
     disp.clear((0, 0, 0))
     dist_sens = False
     #--------------------DISTANCE SENSOR DATA SCREEN--------------------
-    if (dist_sens == True):
+    if (dist_sens == False):
         GPIO.output(TRIG, False)
         time.sleep(0.1)
         GPIO.output(TRIG, True)
@@ -100,7 +100,7 @@ while(True):#repeat
             draw_rotated_text(disp.buffer, "" + str(distance - 0.5) + "cm", (120-w1, 300), text_rotation, font, fill=(255, 255, 255))
 
     #--------------------MAIN SENSOR DATA--------------------
-    if (dist_sens == False):
+    if (dist_sens == True):
         #--------------------GET STUFF FROM SENSORS--------------------
         sens_temperature = weather.temperature()
         sens_pressure = weather.pressure()
