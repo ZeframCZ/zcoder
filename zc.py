@@ -165,5 +165,5 @@ while(True):#repeat
     if dist_sens == False:
         dist_sens = True
     elif dist_sens == True:
-        dist_sens = False
+        dist_sens = True
     disp.display()
