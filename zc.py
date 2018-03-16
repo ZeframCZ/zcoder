@@ -111,7 +111,7 @@ while(True):#repeat
         draw.line((67, 79, xx, yy), fill=(255,255,255))
 
         #draw line,date and time
-        draw.line((132, 35, 217, 120), outline = (255, 255, 255), fill=(255,255,255))
+        draw.line((132, 35, 217, 120), fill=(255,255,255))
         draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
 
 
