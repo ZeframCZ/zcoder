@@ -81,6 +81,8 @@ while(True):#repeat
 
     #--------------------DISTANCE SENSOR DATA SCREEN--------------------
     if (dist_sens == False):
+        draw.rectangle((240, 320, 0, 260), outline=(255, 255, 255), fill=(0, 120, 255))
+
         GPIO.output(TRIG, False)
         time.sleep(0.1)
         GPIO.output(TRIG, True)
@@ -94,8 +96,8 @@ while(True):#repeat
         distance = pulse_duration * 17150
         distance = round(distance, 2)
         if distance > 2 and distance < 400:  # Check whether the distance is within range
-            w1, h1 = draw.textsize(""+ str(distance))
-            draw_rotated_text(disp.buffer, "" + str(distance - 0.5) + "cm", (120-w1, 300), text_rotation, font, fill=(255, 255, 255))
+            w1, h1 = draw.textsize(str(distance)+"cm")
+            draw_rotated_text(disp.buffer,str(distance - 0.5) + "cm", (120-w1, 280), text_rotation, font, fill=(255, 255, 255))
 
     #--------------------MAIN SENSOR DATA--------------------
     if (dist_sens == True):
