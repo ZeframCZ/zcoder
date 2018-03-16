@@ -58,6 +58,7 @@ timer = 10
 text_rotation = 180
 screen_width = 230
 dist_sens = False#switch between screens
+date = datetime.now()
 
 #--------------------DEFINE DRAW FUNCTION--------------------
 def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
