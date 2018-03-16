@@ -71,18 +71,6 @@ while(True):#repeat
         sens_height = 600
         sens_distance = 0.0
 
-        if (update):
-            update = False
-        ##--------------------DELAY SCREEN UPDATE--------------------
-        if (timer > 1):
-            timer -= 1
-        if (timer < 2):
-            disp.clear((0, 0, 0))
-            update = True
-            timer = 5  # delay time
-        date = datetime.now()
-
-
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
 
         w1, h1 = draw.textsize("ZCoder 2.0")
@@ -124,8 +112,18 @@ while(True):#repeat
         yy = (math.sin(-(sens_heading * math.pi / 180)) * 40) + 79
         draw.line((67, 79, xx, yy), fill=(255, 0, 0))
 
-        #draw line,date and time
-        draw.line((0, 10, 240, 10), fill=(255,255,255))
-        draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
 
-        disp.display()
+    if (update):
+        update = False
+    if (timer > 1):
+        timer -= 1
+    if (timer < 2):
+        disp.clear((0, 0, 0))
+        update = True
+        timer = 5  # delay time
+    date = datetime.now()
+    #draw line,date and time
+    draw.line((0, 10, 240, 10), fill=(255,255,255))
+    draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
+
+    disp.display()
