@@ -159,7 +159,7 @@ while(True):#repeat
         disp.clear((0, 0, 0))
         update = True
         timer = 5  # delay time
-    date = datetime.now()
+        date = datetime.now()
     #draw line,date and time
     draw.line((0, 10, 240, 10), fill=(255,255,255))
     draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
