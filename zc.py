@@ -116,7 +116,6 @@ while(True):#repeat
 
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
 
-        w1, h1 = draw.textsize("ZCoder 2.0")
         w2, h2 = draw.textsize("" + str(math.floor(sens_temperature)))
         w3, h3 = draw.textsize("" + str(math.floor(sens_pressure)))
         w4, h4 = draw.textsize("" + str(sens_light))
@@ -162,5 +161,6 @@ while(True):#repeat
         date = datetime.now()
     #draw line,date and time
     draw.line((0, 25, 240, 25), fill=(255,255,255))
-    draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
+    w1, h1 = draw.textsize(str(date))
+    draw_rotated_text(disp.buffer, str(date), (120-w1, 0), text_rotation, font_small,fill=(255, 255, 255))
     disp.display()
