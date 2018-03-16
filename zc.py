@@ -80,7 +80,7 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
 
 while(True):#repeat
     disp.clear((0, 0, 0))
-    dist_sens = True
+    dist_sens = False
     #--------------------DISTANCE SENSOR DATA SCREEN--------------------
     if (dist_sens):
         GPIO.output(TRIG, False)
