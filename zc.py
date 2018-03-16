@@ -83,6 +83,8 @@ while(True):#repeat
     dist_sens = True
     #--------------------DISTANCE SENSOR DATA SCREEN--------------------
     if (dist_sens):
+        disp.clear((0, 0, 0))
+
         GPIO.output(TRIG, False)
         dsens_status = "Waitng for sensor to settle"
         time.sleep(0.1)
@@ -126,9 +128,6 @@ while(True):#repeat
         w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
         w10, h10 = draw.textsize("Kompas: " + str(sens_heading))
         w11, h11 = draw.textsize("" + str(sens_height))
-        #w11, h11 = draw.textsize("Vzdalenost: " + str(sens_distance))
-
-        #draw_rotated_text(disp.buffer, "ZCoder 2.0", (screen_width - w1, 310), text_rotation, font,fill=(255, 255, 255))
 
         #Left up temperature
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
