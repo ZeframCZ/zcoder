@@ -156,7 +156,7 @@ while(True):#repeat
         disp.clear((0, 0, 0))
         update = True
         if dist_sens == False: dist_sens = True
-        if dist_sens == True: dist_sens = False
+        elif dist_sens == True: dist_sens = False
         timer = 50  # delay time
         date = datetime.now()
     #draw line,date and time
