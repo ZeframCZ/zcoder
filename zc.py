@@ -98,6 +98,10 @@ while(True):#repeat
         if distance > 2 and distance < 400:  # Check whether the distance is within range
             w1, h1 = draw.textsize(str(distance)+"cm")
             draw_rotated_text(disp.buffer,str(distance - 0.5) + "cm", (120-w1, 280), text_rotation, font, fill=(255, 255, 255))
+        else:
+            w1, h1 = draw.textsize("Out of range")
+            draw_rotated_text(disp.buffer, "Out of range", (120 - w1, 280), text_rotation, font,fill=(255, 0, 0))
+
 
     #--------------------MAIN SENSOR DATA--------------------
     if (dist_sens == True):
@@ -116,11 +120,6 @@ while(True):#repeat
         w2, h2 = draw.textsize("" + str(math.floor(sens_temperature)))
         w3, h3 = draw.textsize("" + str(math.floor(sens_pressure)))
         w4, h4 = draw.textsize("" + str(sens_light))
-        w5, h5 = draw.textsize("")
-        w6, h6 = draw.textsize("X: " + str(math.floor(sens_accX)))
-        w7, h7 = draw.textsize("Y: " + str(math.floor(sens_accY)))
-        w8, h8 = draw.textsize("Z: " + str(math.floor(sens_accZ)))
-        w10, h10 = draw.textsize("Kompas: " + str(sens_heading))
         w11, h11 = draw.textsize("" + str(sens_height))
 
         #Left up temperature
