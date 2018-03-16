@@ -148,18 +148,18 @@ while(True):#repeat
 
 
 
-        if (update):
-            update = False
-        if (timer > 1):
-            timer -= 1
-        if (timer < 2):
-            disp.clear((0, 0, 0))
-            update = True
-            if dist_sens == False: dist_sens = True
-            if dist_sens == True: dist_sens = False
-            timer = 50  # delay time
-            date = datetime.now()
-        #draw line,date and time
-        draw.line((0, 10, 240, 10), fill=(255,255,255))
-        draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
+    if (update):
+        update = False
+    if (timer > 1):
+        timer -= 1
+    if (timer < 2):
+        disp.clear((0, 0, 0))
+        update = True
+        if dist_sens == False: dist_sens = True
+        if dist_sens == True: dist_sens = False
+        timer = 50  # delay time
+        date = datetime.now()
+    #draw line,date and time
+    draw.line((0, 10, 240, 10), fill=(255,255,255))
+    draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
     disp.display()
