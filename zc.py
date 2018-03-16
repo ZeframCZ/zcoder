@@ -79,7 +79,6 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
 
 
 while(True):#repeat
-    disp.clear((0, 0, 0))
 
     dist_sens = False
     #--------------------DISTANCE SENSOR DATA SCREEN--------------------
@@ -105,7 +104,7 @@ while(True):#repeat
 
         draw_rotated_text(disp.buffer, "Sensor status: " + str(dsens_status), (240, 320), text_rotation, font, fill=(255, 255, 255))
     #--------------------MAIN SENSOR DATA--------------------
-    if (dist_sens == False):
+    #if (dist_sens == False):
         #--------------------GET STUFF FROM SENSORS--------------------
         sens_temperature = weather.temperature()
         sens_pressure = weather.pressure()
@@ -158,16 +157,16 @@ while(True):#repeat
 
 
 
-        if (update):
-            update = False
-        if (timer > 1):
-            timer -= 1
-        if (timer < 2):
-            disp.clear((0, 0, 0))
-            update = True
-            timer = 5  # delay time
-            date = datetime.now()
-        #draw line,date and time
-        draw.line((0, 10, 240, 10), fill=(255,255,255))
-        draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
+    if (update):
+        update = False
+    if (timer > 1):
+        timer -= 1
+    if (timer < 2):
+        disp.clear((0, 0, 0))
+        update = True
+        timer = 5  # delay time
+        date = datetime.now()
+    #draw line,date and time
+    draw.line((0, 10, 240, 10), fill=(255,255,255))
+    draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
     disp.display()
