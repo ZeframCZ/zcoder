@@ -48,7 +48,7 @@ disp.clear((0, 0, 0))
 draw = disp.draw()
 #font = ImageFont.load_default()
 font = ImageFont.truetype("/usr/share/fonts/truetype/lato/Lato-Medium.ttf", 25, encoding="unic")
-font_small = ImageFont.truetype("/usr/share/fonts/truetype/lato/Lato-Medium.ttf", 8, encoding="unic")
+font_small = ImageFont.truetype("/usr/share/fonts/truetype/lato/Lato-Medium.ttf", 15, encoding="unic")
 #font_large = ImageFont.truetype(12)ImageFont.truetype("arial.ttf", fontsize)
 #--------------------SET UP PLACEHOLDERS--------------------
 update = True
@@ -161,6 +161,6 @@ while(True):#repeat
         timer = 200  # delay time
         date = datetime.now()
     #draw line,date and time
-    draw.line((0, 10, 240, 10), fill=(255,255,255))
+    draw.line((0, 25, 240, 25), fill=(255,255,255))
     draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
     disp.display()
