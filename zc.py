@@ -105,14 +105,14 @@ while(True):#repeat
         # Left down acc
         #draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
         # right down compass
-        xx = (math.cos(sens_heading) * 20) + 67
-        yy = (math.sin(sens_heading) * 20) + 79
+        xx = (math.cos(sens_heading*math.pi/180) * 40) + 67
+        yy = (math.sin(sens_heading*math.pi/180) * 40) + 79
         draw.ellipse((23, 35, 108, 120), outline = (255, 255, 255), fill=(0,120,255))
         draw.line((67, 79, xx, yy), fill=(255,255,255))
 
         #draw line,date and time
-        #draw.line((132, 35, 217, 120), outline = (255, 255, 255), fill=(255,255,255))
-        #draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
+        draw.line((132, 35, 217, 120), outline = (255, 255, 255), fill=(255,255,255))
+        draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
 
 
 
