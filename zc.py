@@ -123,7 +123,7 @@ while(True):#repeat
 
         #Left up temperature
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)+"°C"), (174-w2,290-h2),text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)+" C"), (174-w2,290-h2),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
         draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(0, 120, 255))
         draw_rotated_text(disp.buffer, str(math.floor(sens_pressure/100)+"hPa"), (67-w3, 290-h3), text_rotation, font,fill=(255, 255, 255))
