@@ -116,24 +116,24 @@ while(True):#repeat
 
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
 
-        w2, h2 = draw.textsize("" + str(math.floor(sens_temperature)))
-        w3, h3 = draw.textsize("" + str(math.floor(sens_pressure)))
-        w4, h4 = draw.textsize("" + str(sens_light))
-        w11, h11 = draw.textsize("" + str(sens_height))
+        w2, h2 = draw.textsize(str(math.floor(sens_temperature))+"°C")
+        w3, h3 = draw.textsize(str(math.floor(sens_pressure/100)+"hPa"))
+        w4, h4 = draw.textsize(str(sens_light)+"lx")
+        w11, h11 = draw.textsize(str(sens_height)+"m")
 
         #Left up temperature
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (174-w2,290-h2),text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)+"°C"), (174-w2,290-h2),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
-        draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(light.rgb()))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (67-w3, 290-h3), text_rotation, font,fill=(255, 255, 255))
+        draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(0, 120, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_pressure/100)+"hPa"), (67-w3, 290-h3), text_rotation, font,fill=(255, 255, 255))
 
         #Left mid light
-        draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (174-w4, 200-h4), text_rotation, font,fill=(255, 255, 255))
+        draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(light.rgb()))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_light)+"lx"), (174-w4, 200-h4), text_rotation, font,fill=(255, 255, 255))
         #right mid height
         draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (67-w11, 200-h11), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(math.floor(sens_height)+"m"), (67-w11, 200-h11), text_rotation, font,fill=(255, 255, 255))
 
         # Left down acc
         #draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
@@ -141,10 +141,10 @@ while(True):#repeat
         draw.ellipse((23, 35, 108, 120), outline=(255, 255, 255), fill=(0, 120, 255))
         xx = (math.cos(sens_heading * math.pi / 180) * 40) + 67
         yy = (math.sin(sens_heading * math.pi / 180) * 40) + 79
-        draw.line((67, 79, xx, yy), fill=(0, 255, 0))
+        draw.line((67, 79, xx, yy), fill=(0, 255, 0), width = (3))
         xx = (math.cos(-(sens_heading * math.pi / 180)) * 40) + 67
         yy = (math.sin(-(sens_heading * math.pi / 180)) * 40) + 79
-        draw.line((67, 79, xx, yy), fill=(255, 0, 0))
+        draw.line((67, 79, xx, yy), fill=(255, 0, 0), width = (3))
 
 
 
