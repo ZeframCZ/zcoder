@@ -92,26 +92,27 @@ while(True):#repeat
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
         draw_rotated_text(disp.buffer,str(math.floor(sens_temperature)), (174-w2,290-h2),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
-        draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(120, 255, 0))
+        draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(0, 120, 255))
         draw_rotated_text(disp.buffer, str(math.floor(sens_pressure)), (67-w3, 290-h3), text_rotation, font,fill=(255, 255, 255))
 
         #Left mid light
         draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(0, 120, 255))
         draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (174-w4, 200-h4), text_rotation, font,fill=(255, 255, 255))
         #right mid height
-        draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(120, 255, 0))
+        draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(0, 120, 255))
         draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (67-w11, 200-h11), text_rotation, font,fill=(255, 255, 255))
 
-        # Left mid light
-        #draw.rectangle((217, 120,  132, 35), outline=(255, 255, 255), fill=(0, 120, 255))
+        # Left down acc
         #draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
-        # right mid height
-        #draw.rectangle((108, 120, 23, 35), outline=(255, 255, 255), fill=(120, 255, 0))
-        #draw_rotated_text(disp.buffer, str(math.floor(sens_height)), (23-10, 35-10), text_rotation, font,fill=(255, 255, 255))
+        # right down compass
+        xx = (math.cos(sens_heading) * 20) + 67
+        yy = (math.sin(sens_heading) * 20) + 79
+        draw.elipse((23, 35, 108, 120), outline = (255, 255, 255), fill=(255,255,255))
+        draw.line((67, 79, xx, yy), outline = (255, 255, 255), fill=(255,255,255))
 
         #draw line,date and time
-        draw.line((0, 10, 240, 10), fill=(255,255,255))
-        draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
+        #draw.line((132, 35, 217, 120), outline = (255, 255, 255), fill=(255,255,255))
+        #draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
 
 
 
