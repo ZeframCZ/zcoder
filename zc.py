@@ -60,8 +60,8 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
     # Paste the text into the image, using it as a mask for transparency.
     image.paste(rotated, position, rotated)
 while(True):#repeat
-    #if (update):
         #--------------------GET STUFF FROM SENSORS--------------------
+
         sens_temperature = weather.temperature()
         sens_pressure = weather.pressure()
         sens_light = light.light()
@@ -70,7 +70,17 @@ while(True):#repeat
         sens_height = 600;
         sens_distance = 0.0
 
+        if (update):
+            update = False
+        ##--------------------DELAY SCREEN UPDATE--------------------
+        if (timer > 1):
+            timer -= 1
+        if (timer < 2):
+            disp.clear((0, 0, 0))
+            update = True
+            timer = 5  # delay time
         date = datetime.now()
+
 
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
 
@@ -105,24 +115,16 @@ while(True):#repeat
         # Left down acc
         #draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
         # right down compass
-        xx = (math.cos(sens_heading*math.pi/180) * 40) + 67
-        yy = (math.sin(sens_heading*math.pi/180) * 40) + 79
-        draw.ellipse((23, 35, 108, 120), outline = (255, 255, 255), fill=(0,120,255))
-        draw.line((67, 79, xx, yy), fill=(255,255,255))
+        draw.ellipse((23, 35, 108, 120), outline=(255, 255, 255), fill=(0, 120, 255))
+        xx = (math.cos(sens_heading * math.pi / 180) * 40) + 67
+        yy = (math.sin(sens_heading * math.pi / 180) * 40) + 79
+        draw.line((67, 79, xx, yy), fill=(0, 255, 0))
+        xx = (math.cos(-sens_heading * math.pi / 180) * 40) + 67
+        yy = (math.sin(-sens_heading * math.pi / 180) * 40) + 79
+        draw.line((67, 79, xx, yy), fill=(255, 0, 0))
 
         #draw line,date and time
         draw.line((0, 10, 240, 10), fill=(255,255,255))
         draw_rotated_text(disp.buffer, str(date), (50, 0), text_rotation, font_small,fill=(255, 255, 255))
 
-
-
-
         disp.display()
-        update = False
-##--------------------DELAY SCREEN UPDATE--------------------
-if (timer > 1):
-    timer -= 1
-if (timer < 2):
-    disp.clear((0, 0, 0))
-    update = True
-    timer = 5#delay time
