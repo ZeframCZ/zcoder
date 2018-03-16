@@ -163,5 +163,5 @@ while(True):#repeat
     draw.line((0, 25, 240, 25), fill=(255,255,255))
     w1, h1 = draw.textsize(str(date))
     draw_rotated_text(disp.buffer, str(date), (165 - w1, 8), text_rotation, font_small,fill=(255, 255, 255))
-
+    dist_sens = False
     disp.display()
