@@ -89,7 +89,13 @@ while(True):#repeat
         dist_sens = True
     #--------------------DISTANCE SENSOR DATA SCREEN--------------------
     if (dist_sens == False):
+        sens_accX, sens_accY, sens_accZ = motion.accelerometer()
+
         draw.rectangle((217, 310, 23, 260), outline=(255, 255, 255), fill=(0, 120, 255))
+
+        draw.rectangle((217, 250, 23, 190), outline=(255, 255, 255), fill=(0, 120, 255))
+        w1, h1 = draw.textsize(str(sens_accY))
+        draw_rotated_text(disp.buffer, str(sens_accY), (120 - w1, 280), text_rotation, font,fill=(255, 255, 255))
 
         GPIO.output(TRIG, False)
         time.sleep(0.1)
