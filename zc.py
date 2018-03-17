@@ -156,19 +156,19 @@ while(True):#repeat
 
         draw.line((x1, y1, x2, y2), fill=(255, 255, 255), width=(1))#X
         draw.line((xx1, yy1, xx2, yy2), fill=(255, 255, 255), width=(1))#Y
-        if sens_accX == 1:
+        if sens_accX < 0:
             draw.ellipse((x1-10,y1-10,x1+10,y1+10), outline = (255,255,255), fill = (0, 0, 0))
-        if sens_accX == -1:
+        if sens_accX > 0:
             draw.ellipse((x2-10,y2-10,x2+10,y2+10), outline = (255,255,255), fill = (0, 0, 0))
 
-        if sens_accY == 1:
+        if sens_accY < 0:
             draw.ellipse((xx1-10,yy1-10,xx1+10,yy1+10), outline = (255,255,255), fill = (0, 0, 0))
-        if sens_accY == -1:
+        if sens_accY > 0:
             draw.ellipse((xx2-10,yy2-10,xx2+10,yy2+10), outline = (255,255,255), fill = (0, 0, 0))
 
-        if sens_accZ == 1:
+        if sens_accZ < 0:
             draw.ellipse((67-10,100-10,67+10,100+10), outline = (255,255,255), fill = (0, 0, 0))
-        if sens_accZ == -1:
+        if sens_accZ > 0:
             draw.ellipse((67-10,100-10,67+10,100+10), outline = (255,255,255), fill = (0, 0, 0))
 
         draw_rotated_text(disp.buffer, str(sens_accX)+"/"+str(sens_accY)+"/"+str(sens_accZ), (0,50), text_rotation, font_small, fill=(255, 255, 255))
