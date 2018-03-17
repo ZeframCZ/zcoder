@@ -144,17 +144,27 @@ while(True):#repeat
         draw_rotated_text(disp.buffer, str(math.floor(sens_height))+"m", (67-w11, 200-h11), text_rotation, font,fill=(255, 255, 255))
 
         # Left down acc
-        draw.line((67, 35, 67, 120), fill=(255, 255, 255), width=(1))#X
-        draw.line((23, 100, 108, 100), fill=(255, 255, 255), width=(1))#Y
+        x1 = 174
+        y1 = 35
+        x2 = 174
+        y2 = 120
+
+        xx1 = 132
+        yy1 = 100
+        xx2 = 217
+        yy2 = 100
+
+        draw.line((x1, y1, x2, y2), fill=(255, 255, 255), width=(1))#X
+        draw.line((xx1, yy1, xx2, yy2), fill=(255, 255, 255), width=(1))#Y
         if sens_accX == 1:
-            draw.ellipse((67-10,35-10,67+10,35+10), outline = (255,255,255), fill = (0, 0, 0))
+            draw.ellipse((x1-10,y1-10,x1+10,y1+10), outline = (255,255,255), fill = (0, 0, 0))
         if sens_accX == -1:
-            draw.ellipse((67-10,120-10,67+10,120+10), outline = (255,255,255), fill = (0, 0, 0))
+            draw.ellipse((x2-10,y2-10,x2+10,y2+10), outline = (255,255,255), fill = (0, 0, 0))
 
         if sens_accY == 1:
-            draw.ellipse((23-10,100-10,23+10,100+10), outline = (255,255,255), fill = (0, 0, 0))
+            draw.ellipse((xx1-10,yy1-10,xx1+10,yy1+10), outline = (255,255,255), fill = (0, 0, 0))
         if sens_accY == -1:
-            draw.ellipse((108-10,100-10,108+10,100+10), outline = (255,255,255), fill = (0, 0, 0))
+            draw.ellipse((xx2-10,yy2-10,xx2+10,yy2+10), outline = (255,255,255), fill = (0, 0, 0))
 
         if sens_accZ == 1:
             draw.ellipse((67-10,100-10,67+10,100+10), outline = (255,255,255), fill = (0, 0, 0))
