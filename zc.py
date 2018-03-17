@@ -143,13 +143,13 @@ while(True):#repeat
         draw_rotated_text(disp.buffer, str(math.floor(sens_pressure/100))+"hPa", (67-w, 290+h), text_rotation, font,fill=(255, 255, 255))
 
         #Left mid light
-        w, h = draw.textsize(str(sens_light)+"lx")
+        w, h = draw.textsize(str(round(sens_light))+"lx")
         draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(light.rgb()))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_light))+"lx", (174-w, 200+h), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(round(sens_light))+"lx", (174-w, 200+h), text_rotation, font,fill=(255, 255, 255))
         #right mid height
-        w, h = draw.textsize(str(math.floor(sens_height))+"m")
+        w, h = draw.textsize(str(round(sens_height))+"m")
         draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(math.floor(sens_height))+"m", (67-w, 200+h), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(round(sens_height))+"m", (67-w, 200+h), text_rotation, font,fill=(255, 255, 255))
 
         # Left down acc
         x1 = 174
