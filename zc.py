@@ -78,7 +78,15 @@ def draw_rotated_text(image, text, position, angle, font, fill=(255,255,255)):
 
 while(True):#repeat
     disp.clear((0, 0, 0))
-
+    # --------------------SWITCH BETWEEN SCREENS--------------------
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    input_state = GPIO.input(16)
+    if input_state == False:
+        dist_sens = False
+        time.sleep(0.2)
+    else:
+        dist_sens = True
     #--------------------DISTANCE SENSOR DATA SCREEN--------------------
     if (dist_sens == False):
         draw.rectangle((217, 310, 23, 260), outline=(255, 255, 255), fill=(0, 120, 255))
@@ -157,13 +165,10 @@ while(True):#repeat
         update = True
         timer = 5  # delay time
         date = datetime.now()
+
     #draw line,date and time
     draw.line((0, 25, 240, 25), fill=(255,255,255))
     w1, h1 = draw.textsize(str(date.day)+"."+str(date.month)+"."+str(date.year)+"  "+str(date.hour)+":"+str(date.minute))
     draw_rotated_text(disp.buffer, str(date.day)+"."+str(date.month)+"."+str(date.year)+"  "+str(date.hour)+":"+str(date.minute)+":"+str(date.min), (0 + w1, 8), text_rotation, font_small, fill=(255, 255, 255))
-    #draw_rotated_text(disp.buffer, str(dist_sens), (165 - w1, 50), text_rotation, font_small, fill=(255, 255, 255))
-    if dist_sens == False:
-        dist_sens = True
-    elif dist_sens == True:
-        dist_sens = True
+
     disp.display()
