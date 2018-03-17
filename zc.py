@@ -10,7 +10,7 @@ from envirophat import light
 from envirophat import motion
 
 import math
-from scipy import interpolate
+import scipy
 #import subprocess
 import os
 
