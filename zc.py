@@ -10,7 +10,6 @@ from envirophat import light
 from envirophat import motion
 
 import math
-import scipy
 #import subprocess
 import os
 
@@ -157,7 +156,11 @@ while(True):#repeat
 
         draw.line((x1, y1, x2, y2), fill=(255, 255, 255), width=(1))#Y
         draw.line((xx1, yy1, xx2, yy2), fill=(255, 255, 255), width=(1))#X
-        draw.ellipse((x1 - 10, interpolate.interp2d(y1,y2,sens_accY,kind='cubic') - 10, x1 + 10, interpolate.interp2d(y1,y2,sens_accY,kind='cubic') + 10), outline=(255, 255, 255), fill=(0, 0, 0))
+        A = y1
+        B = y2
+        C = sens_accX
+        dd = (C * A) + ((1-C) * B)
+        draw.ellipse((x1 - 10, dd - 10, x1 + 10, dd + 10), outline=(255, 255, 255), fill=(0, 0, 0))
 
         draw_rotated_text(disp.buffer, str(sens_accX)+"/"+str(sens_accY)+"/"+str(sens_accZ), (0,50), text_rotation, font_small, fill=(255, 255, 255))
         # right down compass
