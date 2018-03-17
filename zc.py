@@ -150,9 +150,9 @@ while(True):#repeat
         y2 = 120
 
         xx1 = 132
-        yy1 = 100
+        yy1 = 77
         xx2 = 217
-        yy2 = 100
+        yy2 = 77
 
         draw.line((x1, y1, x2, y2), fill=(255, 255, 255), width=(1))#X
         draw.line((xx1, yy1, xx2, yy2), fill=(255, 255, 255), width=(1))#Y
