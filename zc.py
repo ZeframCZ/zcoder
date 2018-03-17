@@ -48,6 +48,7 @@ disp.clear((0, 0, 0))
 draw = disp.draw()
 #font = ImageFont.load_default()
 font = ImageFont.truetype("/usr/share/fonts/truetype/lato/Lato-Medium.ttf", 25, encoding="unic")
+font_mid = ImageFont.truetype("/usr/share/fonts/truetype/lato/Lato-Medium.ttf", 20, encoding="unic")
 font_small = ImageFont.truetype("/usr/share/fonts/truetype/lato/Lato-Medium.ttf", 17, encoding="unic")
 #font_large = ImageFont.truetype(12)ImageFont.truetype("arial.ttf", fontsize)
 #--------------------SET UP PLACEHOLDERS--------------------
@@ -136,20 +137,20 @@ while(True):#repeat
         #Left up temperature
         w, h = draw.textsize(str(int(sens_temperature)) + " C")
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer,str(int(sens_temperature))+" C", (174-w,290+h),text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer,str(int(sens_temperature))+" C", (174-w,290-h),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
         w, h = draw.textsize(str(int(sens_pressure/100))+"hPa")
         draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(int(sens_pressure/100))+"hPa", (67-w, 290+h), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(int(sens_pressure/100))+"hPa", (63-w, 290-h), text_rotation, font_mid,fill=(255, 255, 255))
 
         #Left mid light
         w, h = draw.textsize(str(int(sens_light))+"lx")
         draw.rectangle((217, 215,  132, 130), outline=(255, 255, 255), fill=(light.rgb()))
-        draw_rotated_text(disp.buffer, str(int(sens_light))+"lx", (174-w, 200+h), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(int(sens_light))+"lx", (174-w, 200-h), text_rotation, font,fill=(255, 255, 255))
         #right mid height
         w, h = draw.textsize(str(int(sens_height))+"m")
         draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(int(sens_height))+"m", (67-w, 200+h), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, (int(sens_height))+"m", (63-w, 200-h), text_rotation, font_mid,fill=(255, 255, 255))
 
         # Left down acc
         x1 = 174
