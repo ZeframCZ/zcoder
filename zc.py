@@ -150,7 +150,7 @@ while(True):#repeat
         #right mid height
         w, h = draw.textsize(str(int(sens_height))+"m")
         draw.rectangle((108, 215, 23, 130), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, (int(sens_height))+"m", (63-w, 200-h), text_rotation, font_mid,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, (str(int(sens_height)))+"m", (63-w, 200-h), text_rotation, font_mid,fill=(255, 255, 255))
 
         # Left down acc
         x1 = 174
