@@ -95,7 +95,7 @@ while(True):#repeat
 
         draw.rectangle((217, 250, 23, 190), outline=(255, 255, 255), fill=(0, 120, 255))
         w1, h1 = draw.textsize(str(sens_accY))
-        draw_rotated_text(disp.buffer, str(sens_accY), (120 - w1, 280), text_rotation, font,fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer, str(sens_accY*57.295779513), (120 - w1, 220), text_rotation, font,fill=(255, 255, 255))
 
         GPIO.output(TRIG, False)
         time.sleep(0.1)
