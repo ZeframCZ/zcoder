@@ -119,6 +119,18 @@ while(True):#repeat
             draw_rotated_text(disp.buffer, "Out of range", (120 - w, 280), text_rotation, font,fill=(255, 0, 0))
 
 
+            sens_mag = motion.magnetometer()
+            mx = mag_values[0]
+            my = mag_values[1]
+            mz = mag_values[2]
+            w, h = draw.textsize("X:")
+            draw_rotated_text(disp.buffer, "X:"+str(mx), (120 - w, 200), text_rotation, font_mid, fill=(255, 0, 0))
+            w, h = draw.textsize("Y:")
+            draw_rotated_text(disp.buffer, "Y:"+str(my), (120 - w, 180), text_rotation, font_mid, fill=(255, 0, 0))
+            w, h = draw.textsize("Z:")
+            draw_rotated_text(disp.buffer, "Z:"+str(mz), (120 - w, 160), text_rotation, font_mid, fill=(255, 0, 0))
+
+
     #--------------------MAIN SENSOR DATA--------------------
     if (dist_sens == True):
         #--------------------GET STUFF FROM SENSORS--------------------
