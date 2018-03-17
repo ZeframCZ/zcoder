@@ -159,12 +159,12 @@ while(True):#repeat
         C = sens_accY
         D = (C * A) + ((1-C) * B)
         draw.ellipse((x1 - 10, D - 10, x1 + 10, D + 10), outline=(255, 255, 255), fill=(0, 0, 0))
-        A = x1
-        B = x2
+        A = xx1
+        B = xx2
         C = sens_accX
         D = (C * A) + ((1 - C) * B)
-        draw.ellipse((D - 10, y1 - 10, D + 10, y2 + 10), outline=(255, 255, 255), fill=(0, 0, 0))
-        
+        draw.ellipse((D - 10, yy1 - 10, D + 10, yy2 + 10), outline=(255, 255, 255), fill=(0, 0, 0))
+
         draw.line((x1, y1, x2, y2), fill=(255, 255, 255), width=(1))  # Y
         draw.line((xx1, yy1, xx2, yy2), fill=(255, 255, 255), width=(1))  # X
 
