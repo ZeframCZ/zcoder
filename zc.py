@@ -170,6 +170,8 @@ while(True):#repeat
             draw.ellipse((67-10,100-10,67+10,100+10), outline = (255,255,255), fill = (0, 0, 0))
         if sens_accZ == -1:
             draw.ellipse((67-10,100-10,67+10,100+10), outline = (255,255,255), fill = (0, 0, 0))
+
+        draw_rotated_text(disp.buffer, str(math.floor(sens_accX))+"/"+str(math.floor(sens_accY)+"/"+str(math.floor(sens_accZ))), (0,50), text_rotation, font_small, fill=(255, 255, 255))
         # right down compass
         draw.ellipse((23, 35, 108, 120), outline=(255, 255, 255), fill=(0, 120, 255))
         xx = (math.cos(-sens_heading * math.pi / 180) * 40) + 67
