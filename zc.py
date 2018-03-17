@@ -95,7 +95,8 @@ while(True):#repeat
 
         draw.rectangle((217, 250, 23, 190), outline=(255, 255, 255), fill=(0, 120, 255))
         w1, h1 = draw.textsize(str(sens_accY))
-        draw_rotated_text(disp.buffer, str(sens_accY*57.295779513), (120 - w1, 220), text_rotation, font,fill=(255, 255, 255))
+        i = sens_accY*57.295779513
+        draw_rotated_text(disp.buffer, str(round(i)), (120 - w1, 220), text_rotation, font,fill=(255, 255, 255))
 
         GPIO.output(TRIG, False)
         time.sleep(0.1)
@@ -201,6 +202,6 @@ while(True):#repeat
     #draw line,date and time
     draw.line((0, 25, 240, 25), fill=(255,255,255))
     w1, h1 = draw.textsize(str(date.day)+"."+str(date.month)+"."+str(date.year)+"  "+str(date.hour)+":"+str(date.minute))
-    draw_rotated_text(disp.buffer, str(date.day)+"."+str(date.month)+"."+str(date.year)+"  "+str(date.hour)+":"+str(date.minute)+":"+str(date.min), (0 + w1, 8), text_rotation, font_small, fill=(255, 255, 255))
+    draw_rotated_text(disp.buffer, str(date.day)+"."+str(date.month)+"."+str(date.year)+"  "+str(date.hour)+":"+str(date.minute)+":"+str(date.min), (120 - w1, 8), text_rotation, font_small, fill=(255, 255, 255))
 
     disp.display()
