@@ -127,9 +127,9 @@ while(True):#repeat
         sens_accX, sens_accY, sens_accZ = motion.accelerometer()
         sens_heading = motion.heading()
         Pz = 1013.25
-        P = float(sens_pressure/100)
-        T = float(sens_temperature)
-        sens_height = (((Pz/P)^(1/5.257)-1)*(T+273.15))/0.0065
+        P = (sens_pressure/100)
+        T = (sens_temperature)
+        sens_height = ((((Pz/P)^(1/5.257))-1)*(T+273.15))/0.0065
         sens_distance = 0.0
 
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
