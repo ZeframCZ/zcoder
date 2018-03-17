@@ -144,7 +144,22 @@ while(True):#repeat
         draw_rotated_text(disp.buffer, str(math.floor(sens_height))+"m", (67-w11, 200-h11), text_rotation, font,fill=(255, 255, 255))
 
         # Left down acc
-        #draw_rotated_text(disp.buffer, str(math.floor(sens_light)), (132-10, 35-10), text_rotation, font,fill=(255, 255, 255))
+        draw.line((67, 35, 67, 120), fill=(255, 255, 255), width=(1))#X
+        draw.line((23, 100, 108, 100), fill=(255, 255, 255), width=(1))#Y
+        if sens_accX == 1:
+            draw.ellipse((67-10,35-10,67+10,35+10), outline = (255,255,255), fill = (0, 0, 0))
+        if sens_accX == -1:
+            draw.ellipse((67-10,120-10,67+10,120+10), outline = (255,255,255), fill = (0, 0, 0))
+
+        if sens_accY == 1:
+            draw.ellipse((23-10,100-10,23+10,100+10), outline = (255,255,255), fill = (0, 0, 0))
+        if sens_accY == -1:
+            draw.ellipse((108-10,100-10,108+10,100+10), outline = (255,255,255), fill = (0, 0, 0))
+
+        if sens_accZ == 1:
+            draw.ellipse((67-10,100-10,67+10,100+10), outline = (255,255,255), fill = (0, 0, 0))
+        if sens_accZ == -1:
+            draw.ellipse((67-10,100-10,67+10,100+10), outline = (255,255,255), fill = (0, 0, 0))
         # right down compass
         draw.ellipse((23, 35, 108, 120), outline=(255, 255, 255), fill=(0, 120, 255))
         xx = (math.cos(-sens_heading * math.pi / 180) * 40) + 67
