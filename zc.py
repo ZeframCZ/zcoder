@@ -129,7 +129,7 @@ while(True):#repeat
         Pz = 1013.25
         P = (sens_pressure/100)
         T = (sens_temperature)
-        sens_height = ((((Pz/P)^(1/5.257))-1)*(T+273.15))/0.0065
+        sens_height = ((((Pz*1/P*1)**(1/5.257*1))-1)*(T+273.15))/0.0065
         sens_distance = 0.0
 
         #--------------------DRAW STUFF FROM SENSORS--------------------240x320
