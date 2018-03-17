@@ -96,8 +96,8 @@ while(True):#repeat
 
         draw.rectangle((217, 250, 23, 190), outline=(255, 255, 255), fill=(0, 120, 255))
         i = sens_accY * 57.295779513
-        w1, h1 = draw.textsize(str(i))
-        draw_rotated_text(disp.buffer, str(round(i)), (120 - w1, 220), text_rotation, font,fill=(255, 255, 255))
+        w, h = draw.textsize(str(round(int(i))))
+        draw_rotated_text(disp.buffer, str(round(i)), (120 - w, 220), text_rotation, font,fill=(255, 255, 255))
 
         GPIO.output(TRIG, False)
         time.sleep(0.1)
@@ -112,11 +112,11 @@ while(True):#repeat
         distance = pulse_duration * 17150
         distance = round(distance, 2)
         if distance > 2 and distance < 400:  # Check whether the distance is within range
-            w1, h1 = draw.textsize(str(distance)+"cm")
-            draw_rotated_text(disp.buffer,str(distance - 0.5) + "cm", (120-w1, 280), text_rotation, font, fill=(255, 255, 255))
+            w, h = draw.textsize(str(distance)+"cm")
+            draw_rotated_text(disp.buffer,str(distance - 0.5) + "cm", (120-w, 280), text_rotation, font, fill=(255, 255, 255))
         else:
-            w1, h1 = draw.textsize("Out of range")
-            draw_rotated_text(disp.buffer, "Out of range", (120 - w1, 280), text_rotation, font,fill=(255, 0, 0))
+            w, h = draw.textsize("Out of range")
+            draw_rotated_text(disp.buffer, "Out of range", (120 - w, 280), text_rotation, font,fill=(255, 0, 0))
 
 
     #--------------------MAIN SENSOR DATA--------------------
@@ -137,11 +137,11 @@ while(True):#repeat
         #Left up temperature
         w, h = draw.textsize(str(int(sens_temperature)) + " C")
         draw.rectangle((217, 310, 132, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer,str(int(sens_temperature))+" C", (174-w,256-h),text_rotation, font, fill=(255, 255, 255))
+        draw_rotated_text(disp.buffer,str(int(sens_temperature))+"\N{DEGREE SIGN}C", (174-w,246-h),text_rotation, font, fill=(255, 255, 255))
         #right up pressure
         w, h = draw.textsize(str(int(sens_pressure/100))+"hPa")
         draw.rectangle((108, 310,23, 225), outline=(255, 255, 255), fill=(0, 120, 255))
-        draw_rotated_text(disp.buffer, str(int(sens_pressure/100))+"hPa", (63-w, 256-h), text_rotation, font_mid,fill=(255, 255, 255))#271
+        draw_rotated_text(disp.buffer, str(int(sens_pressure/100))+"hPa", (63-w, 246-h), text_rotation, font_mid,fill=(255, 255, 255))#271
 
         #Left mid light
         w, h = draw.textsize(str(int(sens_light))+"lx")
