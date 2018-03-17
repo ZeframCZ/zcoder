@@ -94,8 +94,8 @@ while(True):#repeat
         draw.rectangle((217, 310, 23, 260), outline=(255, 255, 255), fill=(0, 120, 255))
 
         draw.rectangle((217, 250, 23, 190), outline=(255, 255, 255), fill=(0, 120, 255))
-        w1, h1 = draw.textsize(str(sens_accY))
-        i = sens_accY*57.295779513
+        i = sens_accY * 57.295779513
+        w1, h1 = draw.textsize(str(i))
         draw_rotated_text(disp.buffer, str(round(i)), (120 - w1, 220), text_rotation, font,fill=(255, 255, 255))
 
         GPIO.output(TRIG, False)
@@ -164,12 +164,12 @@ while(True):#repeat
         A = y1
         B = y2
         C = sens_accY
-        D = (C * A) + ((-1-C) * B)
+        D = (C * A) + ((1 - C-1) * B)
         draw.ellipse((x1 - 10, D - 10, x1 + 10, D + 10), outline=(255, 255, 255), fill=(0, 0, 0))
         A = xx1
         B = xx2
         C = sens_accX
-        D = (C * A) + ((-1 - C) * B)
+        D = (C * A) + ((1 - C-1) * B)
         draw.ellipse((D - 10, yy1 - 10, D + 10, yy2 + 10), outline=(255, 255, 255), fill=(0, 0, 0))
 
         draw.line((x1, y1, x2, y2), fill=(255, 255, 255), width=(1))  # Y
@@ -177,7 +177,7 @@ while(True):#repeat
 
         #draw.ellipse((x1 - 10, D - 10, x1 + 10, D + 10), outline=(255, 255, 255), fill=(0, 0, 0))
 
-        draw_rotated_text(disp.buffer, str(sens_accX)+"/"+str(sens_accY)+"/"+str(sens_accZ), (0,50), text_rotation, font_small, fill=(255, 255, 255))
+        #draw_rotated_text(disp.buffer, str(sens_accX)+"/"+str(sens_accY)+"/"+str(sens_accZ), (0,50), text_rotation, font_small, fill=(255, 255, 255))
         # right down compass
         draw.ellipse((23, 35, 108, 120), outline=(255, 255, 255), fill=(0, 120, 255))
         xx = (math.cos(-sens_heading * math.pi / 180) * 40) + 67
