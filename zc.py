@@ -19,7 +19,7 @@ import Adafruit_GPIO as GPIO
 import Adafruit_GPIO.SPI as SPI
 
 #import date
-from datetime import datetime
+from datetime import time
 
 import RPi.GPIO as GPIO
 import time
