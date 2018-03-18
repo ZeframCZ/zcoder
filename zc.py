@@ -215,17 +215,6 @@ while(True):#repeat
         yy = (math.sin((-sens_heading+180) * math.pi / 180) * 40) + 79
         draw.line((67, 79, xx, yy), fill=(255, 0, 0), width = (3))
 
-
-
-    if (update):
-        update = False
-    if (timer > 1):
-        timer -= 1
-    if (timer < 2):
-        #disp.clear((0, 0, 0))
-        update = True
-        timer = 5  # delay time
-        T = datetime.time()
     T = datetime.time()
     #draw line,date and time
     draw.line((0, 25, 240, 25), fill=(255,255,255))
