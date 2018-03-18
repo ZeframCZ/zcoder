@@ -95,7 +95,7 @@ while(True):#repeat
 
         draw.rectangle((217, 310, 23, 260), outline=(255, 255, 255), fill=(0, 120, 255))
 
-        draw.rectangle((217, 250, 23, 190), outline=(255, 255, 255), fill=(0, 120, 255))
+        draw.rectangle((217, 250, 23, 200), outline=(255, 255, 255), fill=(0, 120, 255))
         i = sens_accY * 57.295779513
         w, h = draw.textsize(str(round(int(i))))
         draw_rotated_text(disp.buffer, str(round(i)), (120 - w, 220), text_rotation, font,fill=(255, 255, 255))
@@ -121,14 +121,14 @@ while(True):#repeat
 
 
         mx, my, mz, mu = analog.read_all()
-        w, h = draw.textsize("X:"+str(mx))
-        draw_rotated_text(disp.buffer, "X:"+str(mx), (120 - w, 180), text_rotation, font_mid, fill=(255, 0, 0))
-        w, h = draw.textsize("Y:"+str(my))
-        draw_rotated_text(disp.buffer, "Y:"+str(my), (120 - w, 150), text_rotation, font_mid, fill=(255, 0, 0))
-        w, h = draw.textsize("Z:"+str(mz))
-        draw_rotated_text(disp.buffer, "Z:" + str(mz), (120 - w, 120), text_rotation, font_mid, fill=(255, 0, 0))
-        w, h = draw.textsize("U:"+str(mu))
-        draw_rotated_text(disp.buffer, "U:" + str(mu), (120 - w, 90), text_rotation, font_mid, fill=(255, 0, 0))
+        w, h = draw.textsize("A1:"+str(mx)+"V")
+        draw_rotated_text(disp.buffer, "A1:"+str(mx)+"V", (120 - w, 180), text_rotation, font_mid, fill=(255, 0, 0))
+        w, h = draw.textsize("A2:"+str(my)+"V")
+        draw_rotated_text(disp.buffer, "A2:"+str(my)+"V", (120 - w, 150), text_rotation, font_mid, fill=(255, 0, 0))
+        w, h = draw.textsize("A3:"+str(mz)+"V")
+        draw_rotated_text(disp.buffer, "A3:" + str(mz)+"V", (120 - w, 120), text_rotation, font_mid, fill=(255, 0, 0))
+        w, h = draw.textsize("A4:"+str(mu)+"V")
+        draw_rotated_text(disp.buffer, "A4:" + str(mu)+"V", (120 - w, 90), text_rotation, font_mid, fill=(255, 0, 0))
 
             #sens_mag = motion.magnetometer()
             #Magnetometer: {mx} {my} {mz}
