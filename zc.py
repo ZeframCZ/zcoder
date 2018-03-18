@@ -120,15 +120,15 @@ while(True):#repeat
             draw_rotated_text(disp.buffer, "Out of range", (120 - w, 280), text_rotation, font,fill=(255, 0, 0))
 
 
-            mx, my, mz, mu = analog.read_all()
-            w, h = draw.textsize("X:"+str(mx))
-            draw_rotated_text(disp.buffer, "X:"+str(mx), (63, 150), text_rotation, font_mid, fill=(255, 0, 0))
-            w, h = draw.textsize("Y:"+str(my))
-            draw_rotated_text(disp.buffer, "Y:"+str(my), (0, 180), text_rotation, font_mid, fill=(255, 0, 0))
-            w, h = draw.textsize("Z:"+str(mz))
-            draw_rotated_text(disp.buffer, "Z:" + str(mz), (240, 160), text_rotation, font_mid, fill=(255, 0, 0))
-            w, h = draw.textsize("Z:"+str(mu))
-            draw_rotated_text(disp.buffer, "U:" + str(mu), (120 - w, 140), text_rotation, font_mid, fill=(255, 0, 0))
+        mx, my, mz, mu = analog.read_all()
+        w, h = draw.textsize("X:"+str(mx))
+        draw_rotated_text(disp.buffer, "X:"+str(mx), (63, 150), text_rotation, font_mid, fill=(255, 0, 0))
+        w, h = draw.textsize("Y:"+str(my))
+        draw_rotated_text(disp.buffer, "Y:"+str(my), (0, 180), text_rotation, font_mid, fill=(255, 0, 0))
+        w, h = draw.textsize("Z:"+str(mz))
+        draw_rotated_text(disp.buffer, "Z:" + str(mz), (240, 160), text_rotation, font_mid, fill=(255, 0, 0))
+        w, h = draw.textsize("Z:"+str(mu))
+        draw_rotated_text(disp.buffer, "U:" + str(mu), (120 - w, 140), text_rotation, font_mid, fill=(255, 0, 0))
 
             #sens_mag = motion.magnetometer()
             #Magnetometer: {mx} {my} {mz}
