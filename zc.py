@@ -122,7 +122,7 @@ while(True):#repeat
 
             mx, my, mz, mu = analog.read_all()
             w, h = draw.textsize("X:"+str(mx))
-            draw_rotated_text(disp.buffer, "X:"+str(mx), (120, 200), text_rotation, font_mid, fill=(255, 0, 0))
+            draw_rotated_text(disp.buffer, "X:"+str(mx), (63, 150), text_rotation, font_mid, fill=(255, 0, 0))
             w, h = draw.textsize("Y:"+str(my))
             draw_rotated_text(disp.buffer, "Y:"+str(my), (0, 180), text_rotation, font_mid, fill=(255, 0, 0))
             w, h = draw.textsize("Z:"+str(mz))
