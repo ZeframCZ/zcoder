@@ -121,14 +121,14 @@ while(True):#repeat
 
 
         mx, my, mz, mu = analog.read_all()
-        w, h = draw.textsize("A1:"+str(mx)+"V")
-        draw_rotated_text(disp.buffer, "A1:"+str(mx)+"V", (120 - w, 180), text_rotation, font_mid, fill=(255, 0, 0))
-        w, h = draw.textsize("A2:"+str(my)+"V")
-        draw_rotated_text(disp.buffer, "A2:"+str(my)+"V", (120 - w, 150), text_rotation, font_mid, fill=(255, 0, 0))
-        w, h = draw.textsize("A3:"+str(mz)+"V")
-        draw_rotated_text(disp.buffer, "A3:" + str(mz)+"V", (120 - w, 120), text_rotation, font_mid, fill=(255, 0, 0))
-        w, h = draw.textsize("A4:"+str(mu)+"V")
-        draw_rotated_text(disp.buffer, "A4:" + str(mu)+"V", (120 - w, 90), text_rotation, font_mid, fill=(255, 0, 0))
+        w, h = draw.textsize("A1: "+str(mx)+" V")
+        draw_rotated_text(disp.buffer, "A1 :"+str(mx)+" V", (120 - w, 180), text_rotation, font_mid, fill=(255, 0, 0))
+        w, h = draw.textsize("A2: "+str(my)+" V")
+        draw_rotated_text(disp.buffer, "A2: "+str(my)+" V", (120 - w, 150), text_rotation, font_mid, fill=(255, 0, 0))
+        w, h = draw.textsize("A3: "+str(mz)+" V")
+        draw_rotated_text(disp.buffer, "A3: " + str(mz)+" V", (120 - w, 120), text_rotation, font_mid, fill=(255, 0, 0))
+        w, h = draw.textsize("A4: "+str(mu)+" V")
+        draw_rotated_text(disp.buffer, "A4: " + str(mu)+" V", (120 - w, 90), text_rotation, font_mid, fill=(255, 0, 0))
 
             #sens_mag = motion.magnetometer()
             #Magnetometer: {mx} {my} {mz}
@@ -228,7 +228,7 @@ while(True):#repeat
 
     #draw line,date and time
     draw.line((0, 25, 240, 25), fill=(255,255,255))
-    w1, h1 = draw.textsize(str(date.day)+"."+str(date.month)+"."+str(date.year)+"  "+str(date.hour)+":"+str(date.minute))
-    draw_rotated_text(disp.buffer, str(date.day)+"."+str(date.month)+"."+str(date.year)+"  "+str(date.hour)+":"+str(date.minute)+":"+str(date.min), (120 - w1, 8), text_rotation, font_small, fill=(255, 255, 255))
+    w1, h1 = draw.textsize(str(datetime.hour)+":"+str(datetime.minute))
+    draw_rotated_text(disp.buffer, str(datetime.hour)+":"+str(datetime.minute), (120 - w1, 8), text_rotation, font_small, fill=(255, 255, 255))
 
     disp.display()
