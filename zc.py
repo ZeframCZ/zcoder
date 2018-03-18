@@ -58,7 +58,7 @@ timer = 10
 text_rotation = 180
 screen_width = 230
 dist_sens = False#switch between screens
-date = datetime.now()
+hour, minute, second, msecond, tzinf = datetime.time()
 pulse_end = 0
 pulse_start = 0
 
