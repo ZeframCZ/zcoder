@@ -1,2 +1,3 @@
 from envirophat import analog
-print(analog.read_all())
+while True:
+    print(analog.read_all())
