@@ -59,7 +59,7 @@ timer = 10
 text_rotation = 180
 screen_width = 230
 dist_sens = False#switch between screens
-hour, minute, second, msecond, tzinf = datetime.time()
+T = datetime.time()
 pulse_end = 0
 pulse_start = 0
 
@@ -225,11 +225,11 @@ while(True):#repeat
         #disp.clear((0, 0, 0))
         update = True
         timer = 5  # delay time
-        hour, minute, second, msecond, tzinf = datetime.time()
+        T = datetime.time()
 
     #draw line,date and time
     draw.line((0, 25, 240, 25), fill=(255,255,255))
-    w1, h1 = draw.textsize(str(hour)+":"+str(minute)+":"+str(second))
-    draw_rotated_text(disp.buffer, str(hour)+":"+str(minute)+":"+str(second), (120 - w1, 8), text_rotation, font_small, fill=(255, 255, 255))
+    w1, h1 = draw.textsize(str(T.hour)+":"+str(T.min)+":"+str(T.second))
+    draw_rotated_text(disp.buffer, str(T.hour)+":"+str(T.min)+":"+str(T.second), (120 - w1, 8), text_rotation, font_small, fill=(255, 255, 255))
 
     disp.display()
