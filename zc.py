@@ -8,6 +8,7 @@ from PIL import ImageFont
 from envirophat import weather
 from envirophat import light
 from envirophat import motion
+from envirophat import analog
 
 import math
 #import subprocess
@@ -117,6 +118,17 @@ while(True):#repeat
         else:
             w, h = draw.textsize("Out of range")
             draw_rotated_text(disp.buffer, "Out of range", (120 - w, 280), text_rotation, font,fill=(255, 0, 0))
+
+
+            mx, my, mz, mu = analog.read_all()
+            w, h = draw.textsize("X:")
+            draw_rotated_text(disp.buffer, "X:"+str(mx), (120 - w, 200), text_rotation, font_mid, fill=(255, 0, 0))
+            w, h = draw.textsize("Y:")
+            draw_rotated_text(disp.buffer, "Y:"+str(my), (120 - w, 180), text_rotation, font_mid, fill=(255, 0, 0))
+            w, h = draw.textsize("Z:")
+            draw_rotated_text(disp.buffer, "Z:" + str(mz), (120 - w, 160), text_rotation, font_mid, fill=(255, 0, 0))
+            w, h = draw.textsize("Z:")
+            draw_rotated_text(disp.buffer, "U:" + str(mu), (120 - w, 140), text_rotation, font_mid, fill=(255, 0, 0))
 
             #sens_mag = motion.magnetometer()
             #Magnetometer: {mx} {my} {mz}
